@@ -1,0 +1,65 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: rgb(95, 95, 106);
+$secondary-color: rgb(177, 113, 35);
+$tertiary-color: rgb(102, 102, 156);
+$background-primary-color: rgb(190, 190, 190);
+$background-secondary-color: rgb(221, 221, 221);
+$background-tertiary-color: rgb(0, 0, 0);
+
+* { margin: 0 0 0 0; padding: 0 0 0 0; }
+
+body { background-color: $background-tertiary-color; color: $primary-color; animation-name: fadein; animation-duration: 2s; }
+
+header { background-color: $background-primary-color; display: flex; flex-wrap: wrap; width: 100%;
+         height: 85px; position: fixed; margin-left: calc(100% - 85px); }
+header:hover { background-color: $background-secondary-color; width: 100%; height: 300px; margin-left: 0;
+               animation-name: slidein; animation-duration: 0.8s; }
+
+footer { background-color: $background-primary-color; display: block; width: 100%; height: 45px;
+         position: fixed; margin-top: calc(100% - 45px); transition: all 0.4s; }
+footer:hover { background-color: $background-primary-color; display: block; width: 100%; height: 85px;
+               position: fixed; margin-top: calc(100% - 85px); }
+
+a { color: $primary-color; text-decoration: none; }
+a:visited { color: $primary-color; text-decoration: none; }
+
+.container { display: flex; flex-direction: row; }
+.list { width: 400px; display: flex; flex-direction: column; flex-wrap: nowrap; align-items: flex-start; }
+.list-title { color: $primary-color; }
+.list-item { color: $tertiary-color; opacity: 0; }
+.list-item:hover { color: $secondary-color; font-size: 2em; }
+
+.focused-item { visibility: visible; opacity: 1; }
+
+.exercises {}
+.exercise {}
+
+header:hover {
+     .list {
+        .list-item { animation-name: showitems; animation-duration: 1s; animation-fill-mode: forwards; }
+    }
+}
+
+@keyframes showitems {
+    from { opacity: 0;}
+    80% { opacity: 0;}
+    to { opacity: 1;}
+}
+
+@keyframes fadein {
+    from { opacity: 0; background-color: black; color: black; }
+    50% { opacity: 0; background-color: black; color: black; }
+    to { opacity: 1; background-color: $background-tertiary-color; color: $primary-color; }
+}
+
+@keyframes slidein {
+    from { height: 85px; margin-left: calc(100% - 85px); }
+    50% { height: 85px; margin-left: 0; }
+    to { height: 300px; margin-left: 0; }
+}
+
+/*@keyframes slideout {
+    from { height: 300px; margin-left: 0; }
+    50% { height: 85px; margin-left: 0; }
+    to { height: 85px; margin-left: calc(100% - 85px); } 
+}*/
