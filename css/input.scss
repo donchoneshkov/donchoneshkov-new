@@ -5,8 +5,10 @@ $tertiary-color: rgb(102, 102, 156);
 $background-primary-color: rgb(190, 190, 190);
 $background-secondary-color: rgb(221, 221, 221);
 $background-tertiary-color: rgb(0, 0, 0);
+$standard-font-size: 18px;
+$enlarged-font-size: 25px;
 
-* { margin: 0 0 0 0; padding: 0 0 0 0; }
+* { margin: 0 0 0 0; padding: 0 0 0 0; font-size: $standard-font-size; }
 
 body { background-color: $background-tertiary-color; color: $primary-color; animation-name: fadein; animation-duration: 2s; }
 
@@ -24,12 +26,16 @@ a { color: $primary-color; text-decoration: none; }
 a:visited { color: $primary-color; text-decoration: none; }
 
 .container { display: flex; flex-direction: row; }
+.container-vertical { display: flex; flex-direction: column; }
+
 .list { width: 400px; display: flex; flex-direction: column; flex-wrap: nowrap; align-items: flex-start; }
 .list-title { color: $primary-color; }
 .list-item { color: $tertiary-color; opacity: 0; }
-.list-item:hover { color: $secondary-color; font-size: 2em; }
+.list-item:hover { color: $secondary-color; font-size: $enlarged-font-size; }
+.list-item-expandable { padding-left: 25px; }
 
-.focused-item { visibility: visible; opacity: 1; }
+.focused-item > .hidden-list{ visibility: visible; opacity: 1; left: 20px; }
+.hidden-list { position: fixed; visibility: hidden; opacity: 0; }
 
 .exercises {}
 .exercise {}

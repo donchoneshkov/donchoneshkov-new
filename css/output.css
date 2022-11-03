@@ -1,6 +1,7 @@
 * {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
+  font-size: 18px;
 }
 
 body {
@@ -63,6 +64,11 @@ a:visited {
   flex-direction: row;
 }
 
+.container-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
 .list {
   width: 400px;
   display: flex;
@@ -82,12 +88,23 @@ a:visited {
 
 .list-item:hover {
   color: rgb(177, 113, 35);
-  font-size: 2em;
+  font-size: 25px;
 }
 
-.focused-item {
+.list-item-expandable {
+  padding-left: 25px;
+}
+
+.focused-item > .hidden-list {
   visibility: visible;
   opacity: 1;
+  left: 20px;
+}
+
+.hidden-list {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
 }
 
 header:hover .list .list-item {

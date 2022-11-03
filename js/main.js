@@ -1,15 +1,11 @@
 function showItems(item) {
-    //item = document.getElementsByClassName(item);
-    console.log(item);
     item.classList.add('focused-item');
-    //console.log('mouse in');
+    item.appendChild(hiddenList);
+    
 }
 
 function hideItems(item) {
-    //item = document.getElementsByClassName(item);
-    console.log(item);
     item.classList.remove('focused-item');
-    //console.log('mouse out');
 }
 
 function addExpandableToItems(items) {
@@ -22,3 +18,11 @@ function addExpandableToItems(items) {
 }
 
 addExpandableToItems(document.getElementsByClassName('list-item-expandable'));
+
+function populateHiddenList(html) {
+    document.getElementsByClassName('hidden-list')[0].innerHTML = html;
+}
+
+const hiddenList = document.getElementsByClassName('hidden-list')[0];
+
+
