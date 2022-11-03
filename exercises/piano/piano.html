@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Piano</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div id="welcomeDiv">
+		Welcome to my piano page!
+	</div>
+
+	<div id="pianoContainer">
+		<div class="key white" id="1w" note="0" octave="0"></div>
+		<div class="key black" id="1b" note="1" octave="0"></div>
+		<div class="key white" id="2w" note="2" octave="0"></div>
+		<div class="key black" id="2b" note="3" octave="0"></div>
+		<div class="key white" id="3w" note="4" octave="0"></div>
+		<div class="key white" id="4w" note="5" octave="0"></div>
+		<div class="key black" id="3b" note="6" octave="0"></div>
+		<div class="key white" id="5w" note="7" octave="0"></div>
+		<div class="key black" id="4b" note="8" octave="0"></div>
+		<div class="key white" id="6w" note="9" octave="0"></div>
+		<div class="key black" id="5b" note="10" octave="0"></div>
+		<div class="key white" id="7w" note="11" octave="0"></div>
+		<div class="key white" id="8w" note="0" octave="1"></div>
+		<div class="key black" id="6b" note="1" octave="1"></div>
+		<div class="key white" id="9w" note="2" octave="1"></div>
+		<div class="key black" id="7b" note="3" octave="1"></div>
+		<div class="key white" id="10w" note="4" octave="1"></div>
+		<div class="key white" id="11w" note="5" octave="1"></div>
+		<div class="key black" id="8b" note="6" octave="1"></div>
+		<div class="key white" id="12w" note="7" octave="1"></div>
+		<div class="key black" id="9b" note="8" octave="1"></div>
+		<div class="key white" id="13w" note="9" octave="1"></div>
+		<div class="key black" id="10b" note="10" octave="1"></div>
+		<div class="key white" id="14w" note="11" octave="1"></div>
+		<div class="key white" id="15w" note="0" octave="2"></div>
+		<div class="key black" id="11b" note="1" octave="2"></div>
+		<div class="key white" id="16w" note="2" octave="2"></div>
+		<div class="key black" id="12b" note="3" octave="2"></div>
+		<div class="key white" id="17w" note="4" octave="2"></div>
+		<div class="key white" id="18w" note="5" octave="2"></div>
+		<div class="key black" id="13b" note="6" octave="2"></div>
+		<div class="key white" id="19w" note="7" octave="2"></div>
+		<div class="key black" id="14b" note="8" octave="2"></div>
+		<div class="key white" id="20w" note="9" octave="2"></div>
+		<div class="key black" id="15b" note="10" octave="2"></div>
+		<div class="key white" id="21w" note="11" octave="2"></div>
+		<div class="key white" id="22w" note="0" octave="3"></div>
+		<div class="key black" id="16b" note="1" octave="3"></div>
+		<div class="key white" id="23w" note="2" octave="3"></div>
+		<div class="key black" id="17b" note="3" octave="3"></div>
+		<div class="key white" id="24w" note="4" octave="3"></div>
+		<div class="key white" id="25w" note="5" octave="3"></div>
+		<div class="key black" id="18b" note="6" octave="3"></div>
+		<div class="key white" id="26w" note="7" octave="3"></div>
+		<div class="key black" id="19b" note="8" octave="3"></div>
+		<div class="key white" id="27w" note="9" octave="3"></div>
+		<div class="key black" id="20b" note="10" octave="3"></div>
+		<div class="key white" id="28w" note="11" octave="3"></div>
+
+		
+	</div>
+
+
+<script type="text/javascript" src="js/keyBindings.js"></script>
+<script type="text/javascript">
+
+	var notesArray = [130,138,146,155,164,174,185,196,207,220,233,246];
+	var octavesArray = [1,2,4,8];
+	var contextArray = [];
+ 	var o = [];
+ 	var g = [];
+ 	var oscConnected = [];
+ 	var gainConnected = [];
+
+	var keys = document.querySelectorAll('.key');
+	var noteCooldown = [];
+	var currentlyPlayingNote;
+	var currentlyPlayingOctave;
+	var killingNote = [];
+
+	keys.forEach(function(element) {
+		element.addEventListener('mousedown', function(keys) {
+
+
+
+			var context = new AudioContext();
+			var o = context.createOscillator();
+			var g = context.createGain();
+
+			if ( typeof this.activeOscillator == 'undefined' ) {
+				this.activeOscillator = o;
+			} else {
+				this.activeOscillator.stop();
+				this.activeOscillator.disconnect();
+				this.activeOscillator = undefined;
+			}
+
+			o.connect(g);
+			g.connect(context.destination);
+			o.frequency.value = keyFrequency(this.getAttribute('note'), this.getAttribute('octave'));
+			o.start(0);
+			g.gain.exponentialRampToValueAtTime(1.05, context.currentTime + 0.3);
+
+			setTimeout(() => {g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 2.7)}, 300);
+			setTimeout((inContext) => {
+				console.log('closing context', element);
+				inContext.close();
+			}, 3010, context);
+			
+		});
+	});
+
+
+
+
+
+	function keyFrequency(note, octave) {
+		note = Number(note);
+		octave = Number(octave);
+		return notesArray[note] * octavesArray[octave];
+	}
+
+
+	function playKeyboardNote(notes, octaves) {
+		for (i = 0; i < notes.length; i++) {
+			if (notes[i] == 1) {
+				for (j = 0; j < octaves.length; j++) {
+					if (octaves[j] == 1) {
+						playNote(i, j);
+					}
+				}
+			}
+		}
+
+	}
+
+	function playNote(note, octave, keyPressed) {
+
+		if (contextArray[keyPressed] != undefined && contextArray[keyPressed].state == 'running'){
+
+			if (noteCooldown[keyPressed] == 0) {
+				return;
+			} else {
+				clearTimeout(killingNote[keyPressed]);
+	
+			}
+
+
+		}
+		noteCooldown[keyPressed] = 0;
+		if (contextArray[keyPressed] == undefined) {
+
+			contextArray[keyPressed] = new AudioContext();
+
+
+
+		} else {
+
+	
+
+				contextArray[keyPressed].close();
+
+				contextArray[keyPressed] = undefined;
+				contextArray[keyPressed] = new AudioContext();
+
+		}
+
+		o[keyPressed] = contextArray[keyPressed].createOscillator();
+		g[keyPressed] = contextArray[keyPressed].createGain();
+		o[keyPressed].connect(g[keyPressed]);
+		g[keyPressed].connect(contextArray[keyPressed].destination);
+		o[keyPressed].start(0);
+		o[keyPressed].frequency.value = note * octave;
+		g[keyPressed].gain.exponentialRampToValueAtTime(1.25, contextArray[keyPressed].currentTime + 0.1);
+
+		setTimeout((contextInArray) => {
+			g[keyPressed].gain.exponentialRampToValueAtTime(0.025, contextInArray.currentTime + 4);
+		}, 100, contextArray[keyPressed]);
+	}
+
+	function killNote(contextIndex) {
+
+		noteCooldown[contextIndex] = 1;
+		g[contextIndex].gain.exponentialRampToValueAtTime(0.0025, contextArray[contextIndex].currentTime + 1.9);
+		
+		
+		killingNote[contextIndex] = setTimeout((contextInArray) => {
+			contextInArray.close();
+			contextInArray = undefined;
+		}, 2000, contextArray[contextIndex]);
+	}
+
+
+
+</script>
+</body>
+</html>

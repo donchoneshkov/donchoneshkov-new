@@ -5,31 +5,11 @@
 
 body {
   background-color: rgb(0, 0, 0);
-  color: rgb(51, 51, 57);
+  color: rgb(95, 95, 106);
   animation-name: fadein;
   animation-duration: 2s;
 }
 
-@keyframes fadein {
-  from {
-    visibility: hidden;
-    opacity: 0;
-    background-color: black;
-    color: black;
-  }
-  50% {
-    visibility: hidden;
-    opacity: 0;
-    background-color: black;
-    color: black;
-  }
-  to {
-    visibility: visible;
-    opacity: 1;
-    background-color: rgb(0, 0, 0);
-    color: rgb(51, 51, 57);
-  }
-}
 header {
   background-color: rgb(190, 190, 190);
   display: flex;
@@ -40,48 +20,15 @@ header {
   margin-left: calc(100% - 85px);
 }
 
-header:not(:hover) {
-  animation-name: slideout;
-  animation-duration: 0.6s;
-}
-
 header:hover {
   background-color: rgb(221, 221, 221);
   width: 100%;
   height: 300px;
   margin-left: 0;
   animation-name: slidein;
-  animation-duration: 0.6s;
+  animation-duration: 0.8s;
 }
 
-@keyframes slidein {
-  from {
-    height: 85px;
-    margin-left: calc(100% - 85px);
-  }
-  50% {
-    height: 85px;
-    margin-left: 0;
-  }
-  to {
-    height: 300px;
-    margin-left: 0;
-  }
-}
-@keyframes slideout {
-  from {
-    height: 300px;
-    margin-left: 0;
-  }
-  50% {
-    height: 85px;
-    margin-left: 0;
-  }
-  to {
-    height: 85px;
-    margin-left: calc(100% - 85px);
-  }
-}
 footer {
   background-color: rgb(190, 190, 190);
   display: block;
@@ -102,13 +49,18 @@ footer:hover {
 }
 
 a {
-  color: rgb(51, 51, 57);
+  color: rgb(95, 95, 106);
   text-decoration: none;
 }
 
 a:visited {
-  color: rgb(51, 51, 57);
+  color: rgb(95, 95, 106);
   text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
 }
 
 .list {
@@ -120,12 +72,12 @@ a:visited {
 }
 
 .list-title {
-  color: rgb(51, 51, 57);
+  color: rgb(95, 95, 106);
 }
 
 .list-item {
   color: rgb(102, 102, 156);
-  visibility: hidden;
+  opacity: 0;
 }
 
 .list-item:hover {
@@ -133,8 +85,63 @@ a:visited {
   font-size: 2em;
 }
 
-header:hover .list .list-item {
+.focused-item {
   visibility: visible;
+  opacity: 1;
 }
+
+header:hover .list .list-item {
+  animation-name: showitems;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showitems {
+  from {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+    background-color: black;
+    color: black;
+  }
+  50% {
+    opacity: 0;
+    background-color: black;
+    color: black;
+  }
+  to {
+    opacity: 1;
+    background-color: rgb(0, 0, 0);
+    color: rgb(95, 95, 106);
+  }
+}
+@keyframes slidein {
+  from {
+    height: 85px;
+    margin-left: calc(100% - 85px);
+  }
+  50% {
+    height: 85px;
+    margin-left: 0;
+  }
+  to {
+    height: 300px;
+    margin-left: 0;
+  }
+}
+/*@keyframes slideout {
+    from { height: 300px; margin-left: 0; }
+    50% { height: 85px; margin-left: 0; }
+    to { height: 85px; margin-left: calc(100% - 85px); } 
+}*/
 
 /*# sourceMappingURL=output.css.map */

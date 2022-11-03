@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rocket Exercise</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+	<div id="header"></div>
+	
+	<p id="playAreaContainer">
+		<p id="playArea">		
+			<p id="fastStars">
+				<p id="fasterStars">
+					<span id="rocket" width="1px" height="1px">
+						<img src="assets/smallfighter/smallfighter6.png" width="60px" id="rocketGif" alt="Rocket" >
+					</span> 
+				</p>
+			</p>
+		</p>
+	</p>
+
+	<div id="footer">	
+		<div id="lives" class="hudItem">
+			<img src="assets/smallfighter/smallfighter6.png" width="60px" alt="Rocket" class="lives">
+			<img src="assets/smallfighter/smallfighter6.png" width="60px" alt="Rocket" class="lives">
+			<img src="assets/smallfighter/smallfighter6.png" width="60px" alt="Rocket" class="lives">
+			<img src="assets/smallfighter/smallfighter6.png" width="60px" alt="Rocket" class="lives">
+			<img src="assets/smallfighter/smallfighter6.png" width="60px" alt="Rocket" class="lives">
+		</div>
+		<div id="score" class="hudItem"></div>
+		<div class="hudItem">
+			<button id="soundControl">Sound ON</button>
+			<input type="range" min="0" max="100" value="50" id="volumeSlider">
+		</div>
+		<div class="hudItem description" id="controls">Press E to start. Move with the arrows, and fire with spacebar.
+		</div>
+		<div class="hudItem description">Thanks to MilionthVector and Daniel Cook for the free sprites, and to www.bensound.com for the free music.
+		</div>	
+	</div>
+
+
+<script type="text/javascript" src="js/functions.js"></script>
+<script type="text/javascript" src="js/weaponFunctions.js"></script>
+<script type="text/javascript" src="js/enemySpawnFunctions.js"></script>
+<script type="text/javascript" src="js/spawnBonusFunctions.js"></script>
+<script type="text/javascript" src="js/collision.js"></script>
+<script type="text/javascript" src="js/progression.js"></script>
+<script type="text/javascript" src="js/sounds.js"></script>
+<script type="text/javascript" src="js/controls.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

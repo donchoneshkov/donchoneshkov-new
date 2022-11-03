@@ -1,0 +1,320 @@
+body {
+	background-color: #050505;
+	margin:0;
+	user-select: none; /* supported by Chrome and Opera  */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    
+}
+
+#header {
+	color: #cccccc;
+	background-color: #050505;
+	width: 1080px;
+	height: 50px;
+	margin: auto;
+	padding: 0;
+	position: relative;
+	z-index: 100;
+	font-size: 25px;
+}
+
+#playArea {
+	background-image: url("../assets/background/stars.png");
+	background-attachment: scroll;
+	background-size: cover;
+	background-repeat: repeat-y;
+
+	width: 1080px;
+	height: 700px;
+	margin: auto;
+	padding: 0;
+	position: fixed;
+	z-index: 2;
+	overflow: hidden;
+	
+}
+#playAreaContainer {
+	background-image: url("../assets/background/backgroundSpaceSeamless.png");
+	background-attachment: scroll;
+	background-size: cover;
+	background-repeat: repeat-y;
+
+	width: 1080px;
+	height: 700px;
+	margin: auto;
+
+	padding: 0;
+	position: fixed;
+	z-index: 1;
+	overflow: hidden;
+}
+
+#fastStars {
+	background-image: url("../assets/background/fastStars.png");
+	background-attachment: scroll;
+	background-size: cover;
+	background-repeat: repeat-y;
+
+	width: 1080px;
+	height: 700px;
+	margin: auto;
+	padding: 0;
+	position: fixed;
+	z-index: 3;
+	overflow: hidden;
+
+}
+
+#fasterStars {
+	background-image: url("../assets/background/fasterStars.png");
+	background-attachment: scroll;
+	background-size: cover;
+	background-repeat: repeat-y;
+
+	width: 1080px;
+	height: 700px;
+	margin: auto;
+	padding: 0;
+	position: fixed;
+	z-index: 4;
+	overflow: hidden;
+}
+
+
+#footer {
+	background-color: #050505;
+	width: 1080px;
+	height: 150px;
+	margin: auto;
+	bottom: 50px;
+	left: auto;
+	padding: 0;
+	position: fixed;
+	z-index: 100;
+}
+
+#exhaust {
+	position: absolute;
+	overflow: visible;
+	
+	
+}
+
+#rocket {
+	position: absolute;
+	overflow: visible;
+	z-index: 102;
+	
+}
+
+#exhaustGif {
+	z-index: 101;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	
+}
+
+#rocketGif {
+	
+	top: 50%;
+	left: 50%;
+	z-index: 102;
+}
+
+#lives {
+	margin-top: 50px;
+	z-index: 200;
+}
+
+#score {
+	z-index: 200;
+	margin-right: 250px;
+	text-align: right;
+}
+
+#powerUps {
+	z-index: 200;
+	text-align: right;
+}
+
+.hudItem {
+	color: #aaaaaa;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.bullet {
+	
+	z-index: 89;
+	transform: translate(-50%, -50%) rotate(-90deg);
+	top: 50%;
+	left: 50%;
+
+}
+
+.weaponContainer {
+	position: absolute;
+	overflow: visible;
+	
+	z-index: 89;
+
+}
+
+.sideBulletLeft {
+	z-index: 89;
+	transform: translate(-50%, -50%) rotate(215deg);
+	top: 50%;
+	left: 50%;
+}
+
+.sideWeaponContainerLeft {
+	position: absolute;
+	overflow: visible;
+	z-index: 89;
+}
+
+.sideBulletRight {
+	z-index: 89;
+	transform: translate(-50%, -50%) rotate(-45deg);
+	top: 50%;
+	left: 50%;
+}
+
+.sideWeaponContainerRight {
+	position: absolute;
+	overflow: visible;
+	z-index: 89;
+}
+
+
+
+.removeBullet {
+	color:red;
+}
+
+#controls {
+	
+}
+
+.tile {
+	position: absolute;
+	z-index: 50;
+}
+
+.enemy {
+	z-index: 90;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	
+}
+
+.enemyContainer {
+	position: absolute;
+	overflow: visible;
+	
+	z-index: 90;
+
+}
+
+.removeEnemy {
+	color: red;
+}
+
+.firstHit {
+
+}
+
+.secondHit {
+
+}
+
+.bonusContainer {
+	position: absolute;
+	overflow: visible;
+	z-index: 89;
+}
+
+.bonus {
+	z-index: 89;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+
+}
+
+.removeBonus{
+
+}
+
+.bulletUpgrade{
+
+}
+
+.enemyBullet {
+	z-index: 89;
+	transform: translate(-50%, -50%) rotate(90deg);
+	top: 50%;
+	left: 50%;
+}
+
+.enemyBulletContainer {
+	position: absolute;
+	overflow: visible;
+	
+	z-index: 89;
+}
+
+.enemyPlasma {
+	z-index: 89;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+}
+
+.enemyPlasmaContainer {
+	position: absolute;
+	overflow: visible;
+	
+	z-index: 89;
+}
+
+.mothership {
+	z-index: 90;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+
+}
+
+.mothershipContainer {
+	position: absolute;
+	overflow: visible;
+	
+	z-index: 90;
+
+}
+
+.saucer {
+
+}
+
+.saucerContainer {
+
+}
+
+#soundControl {
+
+}
+
+#volumeSlider {
+
+}
