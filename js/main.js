@@ -1,19 +1,21 @@
 function showItems(item) {
     item.classList.add('focused-item');
-    item.appendChild(hiddenList);
-    
+    item.getElementsByClassName('hidden-list')[0].style.display = 'block';
+    console.log('mouse enter');
 }
 
 function hideItems(item) {
     item.classList.remove('focused-item');
+    item.getElementsByClassName('hidden-list')[0].style.display = 'none';
+    console.log('mouse leave');
 }
 
 function addExpandableToItems(items) {
 
     Array.from(items).forEach(item => {
-        item.addEventListener("mouseover", (event) => showItems(item));
-        item.addEventListener("mouseout", (event) => hideItems(item));
-
+        item.addEventListener("mouseenter", (event) => showItems(item));
+        item.addEventListener("mouseleave", (event) => hideItems(item));
+        
     });
 }
 
@@ -25,4 +27,16 @@ function populateHiddenList(html) {
 
 const hiddenList = document.getElementsByClassName('hidden-list')[0];
 
+/*
+const header = document.getElementsByTagName('header')[0];
+header.addEventListener('mouseout', (event) => hideLists());
 
+function hideLists() {
+    let lists = document.getElementsByClassName('hidden-list');
+    //console.log(document.getElementsByClassName('hidden-list'));
+    Array.from(lists).forEach(item =>{
+        item.style.display = 'none';
+    });
+    //console.log('header out');
+}
+*/
