@@ -2,70 +2,75 @@ $font-stack: Helvetica, sans-serif;
 $primary-color: rgb(95, 95, 106);
 $secondary-color: rgb(177, 113, 35);
 $tertiary-color: rgb(102, 102, 156);
-$background-primary-color: rgb(190, 190, 190);
+$background-primary-color: rgb(16, 16, 18);
 $background-secondary-color: rgb(221, 221, 221);
 $background-tertiary-color: rgb(0, 0, 0);
 $standard-font-size: 18px;
 $enlarged-font-size: 25px;
 
 * { margin: 0 0 0 0; padding: 0 0 0 0; font-size: $standard-font-size; }
-
+.container { display: flex; flex-direction: row; }
+.container-vertical { display: flex; flex-direction: column; }
 body { background-color: $background-tertiary-color; color: $primary-color; animation-name: fadein; animation-duration: 2s; }
 
-header { background-color: $background-primary-color; display: flex; flex-wrap: wrap; width: 15vw;
-         height: 8vh; position: fixed; right: 0; max-width: 90px; max-height: 90px; }
-header:hover { background-color: $background-secondary-color; width: 100vw; height: 30vh; max-height: 32vh;
-               animation-name: slidein; animation-duration: 0.8s; animation-fill-mode: forwards; }
+header { display: flex; flex-wrap: wrap; position: relative; right: 0; background-color: $background-secondary-color; }
+.menu { width: 100vw; height: 32vh; margin-top: -32vh; animation-name: slideout; animation-duration: 0.8s; animation-fill-mode: forwards; }
+.menu-visible { display: flex; animation-name: slidein; animation-duration: 0.8s; animation-fill-mode: forwards; }
+//.menu-visible { animation-name: showitems; animation-duration: 1s; animation-fill-mode: forwards; }
 
 footer { background-color: $background-primary-color; display: block; width: 100vw; height: 5vh;
          position: fixed; top: 95vh; transition: all 0.4s; }
-footer:hover { background-color: $background-primary-color; display: block; width: 100vw; height: 20vh;
+footer:hover { background-color: $background-secondary-color; display: block; width: 100vw; height: 20vh;
                position: fixed; top: 85vh; }
 
 a { color: $primary-color; text-decoration: none; }
 a:visited { color: $primary-color; text-decoration: none; }
 
-.container { display: flex; flex-direction: row; }
-.container-vertical { display: flex; flex-direction: column; }
+
+
+.menu-button { background-color: orange; border-radius: 50%; width: 5em; height: 5em; border: 3px transparent; position: fixed;
+               right: 90px; top: 90px; transform: translate(50%, -50%); cursor: pointer; user-select: none;
+               text-align: center; display: flex; align-items: center; justify-content: center;
+               animation-name: button-float; animation-duration: 8s; animation-iteration-count: infinite; animation-timing-function: ease-in-out;}
+.menu-button:hover { animation-name: button-hover; animation-duration: 0.3s; animation-fill-mode: forwards; animation-iteration-count: 1; }
 
 .list {  }
 .list-title { color: $primary-color; }
-.list-item { color: $tertiary-color; opacity: 0; }
-//.list-item:hover { color: $secondary-color; font-size: $enlarged-font-size; }
+.list-item { color: $tertiary-color; }
 .list-item-expandable { justify-content: space-between; align-items: center; }
+.hidden-list { align-self: flex-start; }
 
-.hidden-list { position: relative; display: none; }
-.focused-item { color: $secondary-color; font-size: $standard-font-size; }
-.focused-item a { color: $secondary-color; font-size: $enlarged-font-size; }
-.focused-item a:visited { color: $secondary-color; }
-.focused-item:hover .hidden-list{ visibility: visible; opacity: 1; display: block; }
+.main-content { width: 100vw; height: 100vh; top: 0; bottom: 0; left: 0; right: 0; }
 
-header:hover {
-     .list {
-        .list-item { animation-name: showitems; animation-duration: 1s; animation-fill-mode: forwards; }
-    }
-}
-
-@keyframes showitems {
-    from { opacity: 0;}
-    80% { opacity: 0;}
-    to { opacity: 1;}
-}
-
-@keyframes fadein {
-    from { opacity: 0; background-color: black; color: black; }
-    50% { opacity: 0; background-color: black; color: black; }
-    to { opacity: 1; background-color: $background-tertiary-color; color: $primary-color; }
-}
 
 @keyframes slidein {
-    from { height: 8vh; margin-left: 85vw; }
-    50% { height: 8vh; margin-left: 0; max-width: 100vw; }
-    to { height: 32vh; margin-left: 0; max-width: 100vw; }
+    from { margin-top: -32vh;}
+    75% {  }
+    to { margin-top: 0; }
 }
+@keyframes slideout {
+    from { margin-top: 0; }
+    75% { }
+    to { margin-top: -32vh; }
+}
+@keyframes button-hover {
+    from { border: 3px transparent; }
+    to { border: 5px solid orange; }
+}
+@keyframes button-float {
+    0% {transform: translate(50%, -50%) rotate(360deg);}
+    20% {transform: translate(48%, -46%) rotate(357deg);}
+    40% {transform: translate(52%, -47%) rotate(363deg);}
+    60% {transform: translate(49%, -51%) rotate(361deg);}
+    70% {transform: translate(56%, -48%) rotate(358deg);}
+    100% {transform: translate(50%, -50%) rotate(360deg);}
+}
+
+
 
 /*@keyframes slideout {
     from { height: 300px; margin-left: 0; }
     50% { height: 85px; margin-left: 0; }
     to { height: 85px; margin-left: calc(100% - 85px); } 
 }*/
+

@@ -1,6 +1,6 @@
 function showItems(item) {
     item.classList.add('focused-item');
-    item.getElementsByClassName('hidden-list')[0].style.display = 'block';
+    item.getElementsByClassName('hidden-list')[0].style.display = 'flex';
     console.log('mouse enter');
 }
 
@@ -21,11 +21,33 @@ function addExpandableToItems(items) {
 
 addExpandableToItems(document.getElementsByClassName('list-item-expandable'));
 
+function toggleMenu() {
+    if (clicked == 0) clicked = 1;
+    else return;
+    if (header.style.display == 'none') { header.style.display = 'flex'; setTimeout( () => { clicked = 0; }, 850); }
+    else if (header.style.display == 'flex') { setTimeout( () => { header.style.display = 'none'; clicked = 0; }, 850); }
+    menu.classList.toggle('menu-visible');
+    console.log('add visible');
+    console.log(header);
+    console.log(header.style.display);
+    
+}
+const header = document.getElementById('header');
+const hiddenList = document.getElementsByClassName('hidden-list')[0];
+const menu = document.getElementById('menu');
+const menuButton = document.getElementById('menu-button');
+menuButton.addEventListener('click', toggleMenu);
+var clicked = 0;
+
+const mainContent = document.getElementById('main-content');
+
+
+
+/*
 function populateHiddenList(html) {
     document.getElementsByClassName('hidden-list')[0].innerHTML = html;
 }
-
-const hiddenList = document.getElementsByClassName('hidden-list')[0];
+*/
 
 /*
 const header = document.getElementsByTagName('header')[0];
