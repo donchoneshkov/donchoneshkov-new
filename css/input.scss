@@ -1,6 +1,7 @@
 $font-stack: Helvetica, sans-serif;
-$primary-color: rgb(95, 95, 106);
-$secondary-color: rgb(177, 113, 35);
+$primary-color: rgb(185, 185, 190);
+$primary-color-dark: rgb(85,85,90);
+$secondary-color: rgb(233, 133, 34);
 $tertiary-color: rgb(102, 102, 156);
 $background-primary-color: rgb(16, 16, 18);
 $background-secondary-color: rgb(221, 221, 221);
@@ -11,9 +12,9 @@ $enlarged-font-size: 25px;
 * { margin: 0 0 0 0; padding: 0 0 0 0; font-size: $standard-font-size; }
 .container { display: flex; flex-direction: row; }
 .container-vertical { display: flex; flex-direction: column; }
-body { background-color: $background-tertiary-color; color: $primary-color; animation-name: fadein; animation-duration: 2s; }
+body { background-color: $background-tertiary-color; color: $primary-color; animation-name: fadein; animation-duration: 2s; cursor: default; }
 
-header { display: flex; flex-wrap: wrap; position: relative; right: 0; background-color: $background-secondary-color; }
+header { display: flex; flex-wrap: wrap; position: relative; right: 0; background-color: $background-secondary-color; color: $primary-color-dark;}
 .menu { width: 100vw; height: 32vh; margin-top: -32vh; animation-name: slideout; animation-duration: 0.8s; animation-fill-mode: forwards; }
 .menu-visible { display: flex; animation-name: slidein; animation-duration: 0.8s; animation-fill-mode: forwards; }
 //.menu-visible { animation-name: showitems; animation-duration: 1s; animation-fill-mode: forwards; }
@@ -21,22 +22,25 @@ header { display: flex; flex-wrap: wrap; position: relative; right: 0; backgroun
 footer { background-color: $background-primary-color; display: block; width: 100vw; height: 5vh;
          position: fixed; top: 95vh; transition: all 0.4s; }
 footer:hover { background-color: $background-secondary-color; display: block; width: 100vw; height: 20vh;
-               position: fixed; top: 85vh; }
+               position: fixed; top: 85vh; color: $primary-color-dark;}
 
-a { color: $primary-color; text-decoration: none; }
-a:visited { color: $primary-color; text-decoration: none; }
+a { color: inherit; text-decoration: none; }
+a:visited { color: inherit; text-decoration: none; }
 
 
 
-.menu-button { background-color: orange; border-radius: 50%; width: 5em; height: 5em; border: 3px transparent; position: fixed;
-               right: 90px; top: 90px; transform: translate(50%, -50%); cursor: pointer; user-select: none;
+.menu-button { background-color: $secondary-color; color: $tertiary-color; width: 5em; height: 5em; 
+               border-radius: 50%; border: 3px transparent; position: fixed; right: 90px; top: 90px;
+               transform: translate(50%, -50%); cursor: pointer; user-select: none;
                text-align: center; display: flex; align-items: center; justify-content: center;
                animation-name: button-float; animation-duration: 8s; animation-iteration-count: infinite; animation-timing-function: ease-in-out;}
-.menu-button:hover { animation-name: button-hover; animation-duration: 0.3s; animation-fill-mode: forwards; animation-iteration-count: 1; }
+.menu-button::after{ content: ""; position: absolute; top: 5px; bottom: 5px; left: 5px; right: 5px; z-index: -1;
+                     background: $secondary-color; filter: blur(20px); border-radius: 50%;}
+.menu-button:hover { animation-name: button-hover; animation-duration: 1s; animation-fill-mode: forwards; animation-iteration-count: 1; }
 
 .list {  }
-.list-title { color: $primary-color; }
-.list-item { color: $tertiary-color; }
+.list-title {  }
+.list-item { }
 .list-item-expandable { justify-content: space-between; align-items: center; }
 .hidden-list { align-self: flex-start; }
 
@@ -54,8 +58,8 @@ a:visited { color: $primary-color; text-decoration: none; }
     to { margin-top: -32vh; }
 }
 @keyframes button-hover {
-    from { border: 3px transparent; }
-    to { border: 5px solid orange; }
+    from { border: 1px solid $secondary-color; }
+    to { border: 8px solid $secondary-color; }
 }
 @keyframes button-float {
     0% {transform: translate(50%, -50%) rotate(360deg);}
