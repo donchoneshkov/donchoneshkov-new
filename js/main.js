@@ -26,11 +26,7 @@ function toggleMenu() {
     else return;
     if (header.style.display == 'none') { header.style.display = 'flex'; setTimeout( () => { clicked = 0; }, 850); }
     else if (header.style.display == 'flex') { setTimeout( () => { header.style.display = 'none'; clicked = 0; }, 850); }
-    menu.classList.toggle('menu-visible');
-    console.log('add visible');
-    console.log(header);
-    console.log(header.style.display);
-    
+    menu.classList.toggle('menu-visible');    
 }
 const header = document.getElementById('header');
 const hiddenList = document.getElementsByClassName('hidden-list')[0];
@@ -40,25 +36,20 @@ menuButton.addEventListener('click', toggleMenu);
 var clicked = 0;
 
 const mainContent = document.getElementById('main-content');
+const sections = document.getElementsByClassName("content-section");
+Array.from(sections)
+    .forEach((item, index) => {
+        item.onmouseover = () => {
+            mainContent.dataset.activeIndex = index;
+        }
+    }); 
 
+const left = document.getElementById('header-background-left');
 
-
-/*
-function populateHiddenList(html) {
-    document.getElementsByClassName('hidden-list')[0].innerHTML = html;
+const handleOnMove = e => {
+    const p = e.clientX / window.innerWidth * 100;
+    left.style.width = `${p}%`;
 }
-*/
 
-/*
-const header = document.getElementsByTagName('header')[0];
-header.addEventListener('mouseout', (event) => hideLists());
-
-function hideLists() {
-    let lists = document.getElementsByClassName('hidden-list');
-    //console.log(document.getElementsByClassName('hidden-list'));
-    Array.from(lists).forEach(item =>{
-        item.style.display = 'none';
-    });
-    //console.log('header out');
-}
-*/
+document.onmousemove = e => handleOnMove(e);
+document.ontouchmove = e => handleOnMove(e.touches[0]);

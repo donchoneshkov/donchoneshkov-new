@@ -1,6 +1,6 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color: rgb(185, 185, 190);
-$primary-color-dark: rgb(85,85,90);
+$primary-color-dark: rgb(85,85,87);
 $secondary-color: rgb(233, 133, 34);
 $tertiary-color: rgb(102, 102, 156);
 $background-primary-color: rgb(16, 16, 18);
@@ -14,8 +14,11 @@ $enlarged-font-size: 25px;
 .container-vertical { display: flex; flex-direction: column; }
 body { background-color: $background-tertiary-color; color: $primary-color; animation-name: fadein; animation-duration: 2s; cursor: default; }
 
-header { display: flex; flex-wrap: wrap; position: relative; right: 0; background-color: $background-secondary-color; color: $primary-color-dark;}
-.menu { width: 100vw; height: 32vh; margin-top: -32vh; animation-name: slideout; animation-duration: 0.8s; animation-fill-mode: forwards; }
+header { display: flex; flex-wrap: wrap; position: relative; right: 0; background-color: $background-secondary-color; color: $primary-color-dark; }
+.header-background { position: absolute; }
+#header-background-left { z-index: 2; background-color: green; width: 100%; height: 100%; background-image: url('images/1.jpg');}
+#header-background-right { z-index: 1; background-color: purple; width: 100%; height: 100%; background-image: url('images/2.jpg');}
+.menu { width: 100vw; height: 32vh; margin-top: -32vh; animation-name: slideout; animation-duration: 0.8s; animation-fill-mode: forwards; z-index: 3; }
 .menu-visible { display: flex; animation-name: slidein; animation-duration: 0.8s; animation-fill-mode: forwards; }
 //.menu-visible { animation-name: showitems; animation-duration: 1s; animation-fill-mode: forwards; }
 
@@ -31,7 +34,7 @@ a:visited { color: inherit; text-decoration: none; }
 
 .menu-button { background-color: $secondary-color; color: $tertiary-color; width: 5em; height: 5em; 
                border-radius: 50%; border: 3px transparent; position: fixed; right: 90px; top: 90px;
-               transform: translate(50%, -50%); cursor: pointer; user-select: none;
+               transform: translate(50%, -50%); cursor: pointer; user-select: none; z-index: 10;
                text-align: center; display: flex; align-items: center; justify-content: center;
                animation-name: button-float; animation-duration: 8s; animation-iteration-count: infinite; animation-timing-function: ease-in-out;}
 .menu-button::after{ content: ""; position: absolute; top: 5px; bottom: 5px; left: 5px; right: 5px; z-index: -1;
@@ -44,8 +47,31 @@ a:visited { color: inherit; text-decoration: none; }
 .list-item-expandable { justify-content: space-between; align-items: center; }
 .hidden-list { align-self: flex-start; }
 
-.main-content { width: 100vw; height: 100vh; top: 0; bottom: 0; left: 0; right: 0; }
+.main-content { align-items: baseline; justify-content: center; }
+.main-content[data-active-index="0"] > .content-background-pattern { background-position: 0% -25%; }
+.main-content[data-active-index="1"] > .content-background-pattern { background-position: 0% -50%; }
+.main-content[data-active-index="2"] > .content-background-pattern { background-position: 0% -75%; }
+.main-content[data-active-index="3"] > .content-background-pattern { background-position: 0% -100%; }
+.main-content[data-active-index="0"] > .content-background-image { background-position: center 45%; }
+.main-content[data-active-index="1"] > .content-background-image { background-position: center 50%; }
+.main-content[data-active-index="2"] > .content-background-image { background-position: center 55%; }
+.main-content[data-active-index="3"] > .content-background-image { background-position: center 60%; }
+.main-content > .content-section:hover { opacity: 1; }
+.content-section { padding: 1% 0 1% 4%; opacity: 0.7; transition: opacity 0.3s linear; }
+.content-section:hover { font-size: $enlarged-font-size; cursor: pointer; }
+.content-section:hover ~ .content-background-pattern { background-size: 11vmin 11vmin; opacity: 0.5; }
+.content-section:hover ~ .content-background-image { background-size: 220vmax; }
 
+.content-background-pattern { height: 100vh; width: 100vw; position: fixed; background-position: 0% 0%; background-size: 12vmin 12vmin;
+                              background-image: radial-gradient( rgba( 255,255,255, 0.1 ) 9%, transparent 9% );
+                              left: 0; top: 0; bottom: 0; right: 0; z-index: -10;
+                              transition: opacity 0.8s ease, background-size 0.8s ease-in-out, background-position 0.3s ease-in-out; }
+
+.content-background-image { height: 100vh; width: 100vw; position: fixed; background-image: url("images/3.jpg");
+                            position: fixed; left: 0; top: 0; z-index: -11; opacity: 0.15; background-size: 200vmax; 
+                            transition: background-size 0.5s ease-in-out, background-position 0.45s ease-in-out;
+                            background-position: center 45%;
+                        }
 
 @keyframes slidein {
     from { margin-top: -32vh;}
