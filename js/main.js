@@ -51,5 +51,5 @@ const handleOnMove = e => {
     left.style.width = `${p}%`;
 }
 
-document.onmousemove = e => handleOnMove(e);
-document.ontouchmove = e => handleOnMove(e.touches[0]);
+header.onmousemove = e => handleOnMove(e);
+header.ontouchmove = e => handleOnMove(e.touches[0]);

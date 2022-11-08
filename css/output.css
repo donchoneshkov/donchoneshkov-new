@@ -1,7 +1,7 @@
 * {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
-  font-size: 18px;
+  font-size: 1.2rem;
 }
 
 .container {
@@ -24,7 +24,7 @@ body {
 
 header {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   position: relative;
   right: 0;
   background-color: rgb(221, 221, 221);
@@ -37,28 +37,35 @@ header {
 
 #header-background-left {
   z-index: 2;
-  background-color: green;
   width: 100%;
   height: 100%;
-  background-image: url("images/1.jpg");
+  background-image: url("images/7.jpg");
+  background-position-y: center;
+  border-right: 2px solid black;
+  transition: width 0.5s linear;
 }
 
 #header-background-right {
   z-index: 1;
-  background-color: purple;
   width: 100%;
   height: 100%;
-  background-image: url("images/2.jpg");
+  background-image: url("images/6.jpg");
+  background-position-y: center;
 }
 
 .menu {
   width: 100vw;
-  height: 32vh;
-  margin-top: -32vh;
+  height: 16vmin;
+  min-height: 215px;
+  margin-top: -16vmin;
   animation-name: slideout;
+  font-weight: 700;
+  text-shadow: 1.3rem 0.7rem 0.6rem black;
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
   z-index: 3;
+  color: rgb(233, 133, 34);
+  flex: 0 0 content;
 }
 
 .menu-visible {
@@ -101,8 +108,8 @@ a:visited {
 .menu-button {
   background-color: rgb(233, 133, 34);
   color: rgb(102, 102, 156);
-  width: 5em;
-  height: 5em;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   border: 3px transparent;
   position: fixed;
@@ -142,13 +149,34 @@ a:visited {
   animation-iteration-count: 1;
 }
 
+.list-title {
+  -webkit-text-stroke: 1px navajowhite;
+  padding: 15px 10px;
+}
+
+.list-item {
+  padding: 10px 5px;
+}
+
+.list-item, .list-item > a, .hidden-item > a {
+  -webkit-text-stroke: 1px navajowhite;
+}
+
 .list-item-expandable {
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .hidden-list {
-  align-self: flex-start;
+  padding-left: 4rem;
+  display: none;
+}
+
+.hidden-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
 }
 
 .main-content {
@@ -199,7 +227,7 @@ a:visited {
 }
 
 .content-section:hover {
-  font-size: 25px;
+  font-size: 2rem;
   cursor: pointer;
 }
 
