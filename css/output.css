@@ -86,7 +86,7 @@ footer {
 }
 
 footer:hover {
-  background-color: rgb(39, 158, 222);
+  background-color: rgb(2, 159, 221);
   display: block;
   width: 100vw;
   height: 20vh;
@@ -132,10 +132,10 @@ a:visited {
 .menu-button::after {
   content: "";
   position: absolute;
-  top: 5px;
-  bottom: 5px;
-  left: 5px;
-  right: 5px;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
   z-index: -1;
   background: rgb(233, 133, 34);
   filter: blur(20px);
@@ -146,7 +146,8 @@ a:visited {
   animation-name: button-hover;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  animation-iteration-count: 1;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
 .list-title {
@@ -179,11 +180,6 @@ a:visited {
   padding: 0 1rem;
 }
 
-.main-content {
-  align-items: baseline;
-  justify-content: center;
-}
-
 .main-content[data-active-index="0"] > .content-background-pattern {
   background-position: 0% -25%;
 }
@@ -201,19 +197,19 @@ a:visited {
 }
 
 .main-content[data-active-index="0"] > .content-background-image {
-  background-position: center 45%;
-}
-
-.main-content[data-active-index="1"] > .content-background-image {
-  background-position: center 50%;
+  background-position: 100% 0%;
 }
 
 .main-content[data-active-index="2"] > .content-background-image {
-  background-position: center 55%;
+  background-position: 55% 20%;
+}
+
+.main-content[data-active-index="1"] > .content-background-image {
+  background-position: 25% 50%;
 }
 
 .main-content[data-active-index="3"] > .content-background-image {
-  background-position: center 60%;
+  background-position: 70% 75%;
 }
 
 .main-content > .content-section:hover {
@@ -222,6 +218,7 @@ a:visited {
 
 .content-section {
   padding: 1% 0 1% 4%;
+  width: fit-content;
   opacity: 0.7;
   transition: opacity 0.3s linear, color 0.3s linear;
 }
@@ -229,7 +226,7 @@ a:visited {
 .content-section:hover {
   font-size: 2rem;
   cursor: pointer;
-  color: rgb(39, 158, 222);
+  color: rgb(2, 159, 221);
 }
 
 .content-section:hover ~ .content-background-pattern {
@@ -238,7 +235,7 @@ a:visited {
 }
 
 .content-section:hover ~ .content-background-image {
-  background-size: 220vmax;
+  background-size: 110vmax;
 }
 
 .content-background-pattern {
@@ -259,14 +256,13 @@ a:visited {
 .content-background-image {
   height: 100vh;
   width: 100vw;
-  position: fixed;
-  background-image: url("images/3.jpg");
+  background-image: url("images/10.jpg");
   position: fixed;
   left: 0;
   top: 0;
   z-index: -11;
-  opacity: 0.15;
-  background-size: 200vmax;
+  opacity: 0.25;
+  background-size: 100vmax;
   transition: background-size 0.5s ease-in-out, background-position 0.45s ease-in-out;
   background-position: center 45%;
 }
@@ -290,9 +286,15 @@ a:visited {
 @keyframes button-hover {
   from {
     border: 1px solid rgb(233, 133, 34);
+    color: rgb(15, 15, 15);
+  }
+  50% {
+    border: 12px solid rgb(233, 133, 34);
+    color: rgb(2, 159, 221);
   }
   to {
-    border: 8px solid rgb(233, 133, 34);
+    border: 1px solid rgb(233, 133, 34);
+    color: rgb(15, 15, 15);
   }
 }
 @keyframes button-float {
@@ -300,16 +302,16 @@ a:visited {
     transform: translate(50%, -50%) rotate(360deg);
   }
   20% {
-    transform: translate(48%, -46%) rotate(357deg);
+    transform: translate(45%, -43%) rotate(357deg);
   }
   40% {
-    transform: translate(52%, -47%) rotate(363deg);
+    transform: translate(55%, -46%) rotate(363deg);
   }
   60% {
-    transform: translate(49%, -51%) rotate(361deg);
+    transform: translate(46%, -54%) rotate(361deg);
   }
   70% {
-    transform: translate(56%, -48%) rotate(358deg);
+    transform: translate(59%, -45%) rotate(358deg);
   }
   100% {
     transform: translate(50%, -50%) rotate(360deg);
