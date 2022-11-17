@@ -53,27 +53,62 @@ a:visited { color: inherit; text-decoration: none; }
 .hidden-item { display: flex; justify-content: center; align-items: center; padding: 0 1rem; }
 
 .main-content {  }
+// rain
+.main-content[data-active-index="0"] > .content-background-pattern { 
+    animation-name: raining; animation-duration: 3s; 
+    animation-iteration-count: infinite; animation-timing-function: linear;
+    background-size: 300% 300%;
+    background-image: url("images/rain.png"); }
+.main-content[data-active-index="0"] > .content-background-pattern::after { 
+    content: ""; height: 100vh; width: 100vw; position: fixed; background-position: 0% 0%;                                                                                    
+    left: 0; top: 0; bottom: 0; right: 0; z-index: -8;
+    transition: opacity 0.8s ease, background-size 0.8s ease-in-out, background-position 0.3s ease-in-out; 
+    background-size: 300% 300%;
+    background-image: url("images/rain.png"); 
+    animation-name: raining; animation-duration: 1s;
+    animation-iteration-count: infinite; animation-timing-function: linear; }
+.main-content[data-active-index="0"] > .content-background-pattern::before { 
+    content: ""; height: 100vh; width: 100vw; position: fixed; background-position: 0% 0%;                                                                                    
+    left: 0; top: 0; bottom: 0; right: 0; z-index: -9;
+    transition: opacity 0.8s ease, background-size 0.8s ease-in-out, background-position 0.3s ease-in-out; 
+    background-size: 300% 300%;
+    background-image: url("images/rain.png"); 
+    animation-name: raining; animation-duration: 4s;
+    animation-iteration-count: infinite; animation-timing-function: linear; }
+// snow
+.main-content[data-active-index="1"] > .content-background-pattern { animation-name: snowing; animation-duration: 3s; }
+// sunshine
+.main-content[data-active-index="2"] > .content-background-pattern { animation-name: sunshine; animation-duration: 3s; }
+// fog
+.main-content[data-active-index="3"] > .content-background-pattern { animation-name: fog; animation-duration: 3s; }
+
+
+/*  dots background
 .main-content[data-active-index="0"] > .content-background-pattern { background-position: 0% -25%; }
 .main-content[data-active-index="1"] > .content-background-pattern { background-position: 0% -50%; }
 .main-content[data-active-index="2"] > .content-background-pattern { background-position: 0% -75%; }
 .main-content[data-active-index="3"] > .content-background-pattern { background-position: 0% -100%; }
+*/
+
+
+
+
 .main-content[data-active-index="0"] > .content-background-image { background-position: 100% 0%; }
 .main-content[data-active-index="2"] > .content-background-image { background-position: 55% 20%; }
 .main-content[data-active-index="1"] > .content-background-image { background-position: 25% 50%; }
 .main-content[data-active-index="3"] > .content-background-image { background-position: 70% 75%; }
 .main-content > .content-section:hover { opacity: 1; }
-.content-section { padding: 1% 0 1% 4%; width: fit-content; opacity: 0.7; transition: opacity 0.3s linear, color 0.3s linear; }
+.content-section { padding: 1% 0 1% 4%; width: fit-content; opacity: 0.7; transition: opacity 0.3s linear, color 0.3s linear, font-size 0.3s linear; }
 .content-section:hover { font-size: $enlarged-font-size; cursor: pointer; color: $tertiary-color; }
-.content-section:hover ~ .content-background-pattern { background-size: 11vmin 11vmin; opacity: 0.5; }
+.content-section:hover ~ .content-background-pattern { opacity: 0.5; }
 .content-section:hover ~ .content-background-image { background-size: 110vmax; }
 
-.content-background-pattern { height: 100vh; width: 100vw; position: fixed; background-position: 0% 0%; background-size: 12vmin 12vmin;
-                              background-image: radial-gradient( rgba( 255,255,255, 0.1 ) 9%, transparent 9% );
+.content-background-pattern { height: 100vh; width: 100vw; position: fixed; background-position: 0% 0%; 
                               left: 0; top: 0; bottom: 0; right: 0; z-index: -10;
                               transition: opacity 0.8s ease, background-size 0.8s ease-in-out, background-position 0.3s ease-in-out; }
 
 .content-background-image { height: 100vh; width: 100vw; background-image: url("images/10.jpg");
-                            position: fixed; left: 0; top: 0; z-index: -11; opacity: 0.25; background-size: 100vmax;
+                            position: fixed; left: 0; top: 0; z-index: -20; opacity: 0.25; background-size: 100vmax;
                             transition: background-size 0.5s ease-in-out, background-position 0.45s ease-in-out;
                             background-position: center 45%; }
 
@@ -101,6 +136,33 @@ a:visited { color: inherit; text-decoration: none; }
     60% {transform: translate(46%, -54%) rotate(361deg);}
     70% {transform: translate(59%, -45%) rotate(358deg);}
     100% {transform: translate(50%, -50%) rotate(360deg);}
+}
+
+@keyframes raining {
+    0% { 
+        background-position: 0vw -50vh;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        background-position: -10vw 0vh;
+        opacity: 0;
+
+    }
+}
+
+@keyframes snowing {
+    
+}
+
+@keyframes sunshine {
+    
+}
+
+@keyframes fog {
+    
 }
 
 
