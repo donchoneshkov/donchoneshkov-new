@@ -1,0 +1,52 @@
+<style type="text/css">
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	.square {
+		width: 200px;
+		height: 200px;
+		border: 2px solid black;
+	}
+	.float {
+		float: left;
+	}
+	.clear {
+		clear: both;
+	}
+	.b {
+		background-color: blue;
+	}
+	.r {
+		background-color: red;
+	}
+	.white {
+		background-color: white;
+	}
+	.hidden {
+		display: none;
+	}
+	.navbar {
+		text-align: center;
+		padding-bottom: 5%;
+	}
+	.menusMainContent {
+		text-align: center;
+		padding-top: 5%;
+	}
+	#registrationForm {
+
+	}
+	.regInput {
+		display: block;
+		text-align: center;
+		margin: auto;
+		margin-top: 2%;
+	}
+	.loginInput {
+		display: block;
+		text-align: center;
+		margin: auto;
+		margin-top: 2%;
+	}
+</style>
