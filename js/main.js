@@ -44,6 +44,15 @@ Array.from(sections)
         }
     }); 
 
+const footer = document.getElementById('footer');
+console.log(footer);
+footer.onmouseover = () => {
+    mainContent.dataset.rain = "rain";
+}
+
+footer.onmouseleave = () => {
+    mainContent.dataset.rain = "";
+}
 const left = document.getElementById('header-background-left');
 
 const handleOnMove = e => {

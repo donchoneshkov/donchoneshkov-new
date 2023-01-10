@@ -13,32 +13,26 @@
         <div class="list container-vertical menu" id="menu">
             <div class="list-title">Check out my stuff!</div>
             <div class="list-item list-item-expandable container">
-                <a href="exercises/exercises.html">
-                    Java Script
-                </a>
+                <div>JavaScript</div>
                 <div class="hidden-list container">  
-                    <div class="hidden-item"><a href="exercises/piano/piano.html">Piano</a></div>
-                    <div class="hidden-item"><a href="exercises/rocket/rocket.html">Rocket</a></div>
+                    <div class="hidden-item"><a href="exercises/piano/piano.html" target="_blank">Piano</a></div>
+                    <div class="hidden-item"><a href="exercises/rocket/rocket.html" target="_blank">Rocket</a></div>
                 </div>
             </div>
             <div class="list-item list-item-expandable container">
-                <a href="exercises/exercises.html">
-                    PHP
-                </a>
+                <div>PHP</div>
                 <div class="hidden-list container">  
-                    <div class="hidden-item"><a href="exercises/snake/index.php">Snake</a></div>
-                    <div class="hidden-item"><a href="">Php 2</a></div>
-                    <div class="hidden-item"><a href="">php 3</a></div>
+                    <div class="hidden-item"><a href="exercises/snake/index.php" target="_blank">Snake</a></div>
+                    <div class="hidden-item"><a href="" target="_blank">Php 2</a></div>
+                    <div class="hidden-item"><a href="" target="_blank">php 3</a></div>
                 </div>
             </div>
             <div class="list-item list-item-expandable container">
-                <a href="exercises/exercises.html">
-                    Online
-                </a>
+                <div>About me</div>
                 <div class="hidden-list container">  
-                    <div class="hidden-item"><a href="https://github.com/donchoneshkov">Github</a></div>
-                    <div class="hidden-item"><a href="https://www.turbosquid.com/Search/Artists/Krutokh">Turbosquid</a></div>
-                    <div class="hidden-item"><a href="">something online 3</a></div>
+                    <div class="hidden-item"><a href="https://github.com/donchoneshkov" target="_blank">Github</a></div>
+                    <div class="hidden-item"><a href="https://www.turbosquid.com/Search/Artists/Krutokh" target="_blank">Turbosquid</a></div>
+                    <div class="hidden-item"><a href="cv/CV-English.pdf" target="_blank">Curriculum Vitae</a></div>
                 </div>
             </div>
         </div>
@@ -48,12 +42,12 @@
     <div id="menu-button" class="menu-button">Click me!</div>
     <content id="main-content" class="main-content container-vertical">
         <section class="content-section">welcome section</section>
-        <section class="content-section">cv section</section>
+        <section class="content-section" onclick="window.open('cv/CV-English.html', '_blank')">cv section</section>
         <section class="content-section">skills section</section>
         <section class="content-section">contact section</section>
         <div class="content-background-pattern"></div>
         <div class="content-background-image"></div>
-        <footer>footer</footer>
+        <footer id="footer">footer</footer>
     </content>
 </body>
 <script src="js/main.js"></script>
