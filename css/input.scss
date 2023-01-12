@@ -159,3 +159,40 @@ a:visited { color: inherit; text-decoration: none; }
     to { height: 85px; margin-left: calc(100% - 85px); } 
 }*/
 
+
+
+@media screen and (max-width: 650px) and (orientation: portrait) {
+    .menu { min-height: 280px; }
+    .focused-item { flex-direction: column; align-items: flex-start; }
+    .hidden-list { padding-left: 0; flex-direction: column; align-items: flex-start; }
+
+    @keyframes slidein {
+        from { margin-top: -560px;}
+        75% {  }
+        to { margin-top: 0; }
+    }
+    @keyframes slideout {
+        from { margin-top: 0; }
+        75% { }
+        to { margin-top: -560px; }
+    }
+
+
+}
+
+
+@media screen and (max-height: 650px) and (orientation: landscape) {
+
+    @keyframes slidein {
+        from { margin-top: -32vw;}
+        75% {  }
+        to { margin-top: 0; }
+    }
+    @keyframes slideout {
+        from { margin-top: 0; }
+        75% { }
+        to { margin-top: -32vw; }
+    }
+
+
+}

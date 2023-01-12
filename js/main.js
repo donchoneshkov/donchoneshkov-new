@@ -13,8 +13,8 @@ function hideItems(item) {
 function addExpandableToItems(items) {
 
     Array.from(items).forEach(item => {
-        item.addEventListener("mouseenter", (event) => showItems(item));
         item.addEventListener("mouseleave", (event) => hideItems(item));
+        item.addEventListener("mouseenter", (event) => showItems(item));
         
     });
 }

@@ -376,5 +376,53 @@ a:visited {
     50% { height: 85px; margin-left: 0; }
     to { height: 85px; margin-left: calc(100% - 85px); } 
 }*/
+@media screen and (max-width: 650px) and (orientation: portrait) {
+  .menu {
+    min-height: 280px;
+  }
+  .focused-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hidden-list {
+    padding-left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @keyframes slidein {
+    from {
+      margin-top: -560px;
+    }
+    to {
+      margin-top: 0;
+    }
+  }
+  @keyframes slideout {
+    from {
+      margin-top: 0;
+    }
+    to {
+      margin-top: -560px;
+    }
+  }
+}
+@media screen and (max-height: 650px) and (orientation: landscape) {
+  @keyframes slidein {
+    from {
+      margin-top: -32vw;
+    }
+    to {
+      margin-top: 0;
+    }
+  }
+  @keyframes slideout {
+    from {
+      margin-top: 0;
+    }
+    to {
+      margin-top: -32vw;
+    }
+  }
+}
 
 /*# sourceMappingURL=output.css.map */
