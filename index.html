@@ -41,12 +41,17 @@
     </header>
     <div id="menu-button" class="menu-button">Click me!</div>
     <content id="main-content" class="main-content container-vertical">
-        <section class="content-section">welcome section</section>
-        <section class="content-section" onclick="window.open('cv/CV-English.html', '_blank')">cv section</section>
-        <section class="content-section">skills section</section>
-        <section class="content-section">contact section</section>
+        <section class="content-section" onclick="loadContent(welcome, contentSection)">Welcome Section</section>
+        <section class="content-section" onclick="loadContent(cv, contentSection)">CV Section</section>
+        <section class="content-section" onclick="loadContent(skills, contentSection)">Skills Section</section>
+        <section class="content-section" onclick="loadContent(contact, contentSection)">Contact Section</section>
         <div class="content-background-pattern"></div>
         <div class="content-background-image"></div>
+        <section class="content-text" id="content-text">
+            <div>Greetings!</div>
+            <div>My name is <span>Doncho</span> and I'm happy to meet you!</div>
+            <div>I look forward to working with you!</div>
+        </section>
         <footer id="footer">footer</footer>
     </content>
 </body>

@@ -1,7 +1,8 @@
 $font-stack: Helvetica, sans-serif;
-$primary-color: rgb(153, 153, 153);
+$primary-color: rgb(194, 191, 191);
 $primary-color-dark: rgb(15,15,15);
-$secondary-color: rgb(233, 133, 34);
+$secondary-color: rgb(242, 193, 44);
+$secondary-color-dark: rgb(220, 113, 5);
 $tertiary-color: rgb(2, 159, 221);
 $background-primary-color: rgb(0, 0, 0);
 $background-secondary-color: rgb(16, 16, 16);
@@ -19,7 +20,7 @@ header { display: flex; flex-wrap: nowrap; position: relative; right: 0; backgro
 #header-background-left { z-index: 2; width: 100%; height: 100%; background-image: url('images/7.jpg');
                           background-position-y: center; border-right: 2px solid black; transition: width 0.3s ease-out; }
 #header-background-right { z-index: 1; width: 100%; height: 100%; background-image: url('images/6.jpg'); background-position-y: center; }
-.menu { width: 100vw; height: 16vmin; min-height: 215px; margin-top: -16vmin; animation-name: slideout; font-weight: 700; text-shadow: 1.3rem 0.7rem 0.6rem black;
+.menu { width: 100vw; height: 16vmin; min-height: 215px; margin-top: -16vmin; animation-name: slideout; font-weight: 700;
         animation-duration: 0.8s; animation-fill-mode: forwards; z-index: 3; color: $secondary-color;  flex: 0 0 content; }
 .menu-visible { display: flex; animation-name: slidein; animation-duration: 0.8s; animation-fill-mode: forwards; }
 //.menu-visible { animation-name: showitems; animation-duration: 1s; animation-fill-mode: forwards; }
@@ -34,20 +35,20 @@ a:visited { color: inherit; text-decoration: none; }
 
 
 
-.menu-button { background-color: $secondary-color; color: $primary-color-dark; width: 5rem; height: 5rem; 
-               border-radius: 50%; outline: 3px transparent; position: fixed; right: 90px; top: 90px;
+.menu-button { background-color: $secondary-color-dark; color: $primary-color-dark; width: 5rem; height: 5rem; 
+               border-radius: 50%; position: fixed; right: 90px; top: 90px;
                transform: translate(50%, -50%); cursor: pointer; user-select: none; z-index: 10;
                text-align: center; display: flex; align-items: center; justify-content: center;
                animation-name: button-float; animation-duration: 8s; animation-iteration-count: infinite; animation-timing-function: ease-in-out;}
 .menu-button::after{ content: ""; position: absolute; top: -5px; bottom: -5px; left: -5px; right: -5px; z-index: -1;
-                     background: $secondary-color; filter: blur(20px); border-radius: 50%;}
+                     background: $secondary-color-dark; filter: blur(6px); border-radius: 50%;}
 .menu-button:hover { animation-name: button-hover; animation-duration: 1s; animation-fill-mode: forwards;
                      animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
 
 .list {  }
-.list-title { -webkit-text-stroke: 1px navajowhite; padding: 15px 10px; }
+//.list-title { -webkit-text-stroke: 1px navajowhite; padding: 15px 10px; }
 .list-item { padding: 10px 5px; }
-.list-item, .list-item > a, .hidden-item > a { -webkit-text-stroke: 1px navajowhite; }
+//.list-item, .list-item > a, .hidden-item > a { -webkit-text-stroke: 1px navajowhite; }
 .list-item-expandable { justify-content: flex-start; align-items: center; }
 .hidden-list { padding-left: 4rem; display: none;}
 .hidden-item { display: flex; justify-content: center; align-items: center; padding: 0 1rem; }
@@ -108,6 +109,24 @@ a:visited { color: inherit; text-decoration: none; }
                             position: fixed; left: 0; top: 0; z-index: -20; opacity: 0.25; background-size: 100vmax;
                             transition: background-size 0.5s ease-in-out, background-position 0.45s ease-in-out;
                             background-position: center 45%; }
+.content-text {
+    padding-left: 2rem;
+    padding-top: 2rem;
+}
+.content-text span {
+    font-style: italic;
+    transition: color 0.3s;
+}
+.content-text span:hover {
+    color: $secondary-color-dark;
+}
+
+.cv-iframe {
+    width: 90%;
+    height: 100vh;
+}
+
+
 
 @keyframes slidein {
     from { margin-top: -32vh;}
@@ -121,9 +140,9 @@ a:visited { color: inherit; text-decoration: none; }
 }
 @keyframes button-hover {
     //from { border: 1px solid $secondary-color; color: $primary-color-dark; }
-    from { outline: 1px solid $secondary-color; color: $primary-color-dark; }
-    50% { outline: 12px solid $secondary-color; color: $tertiary-color; }
-    to { outline: 1px solid $secondary-color; color: $primary-color-dark; }
+    from { outline: 1px solid $secondary-color-dark; color: $primary-color-dark; }
+    50% { outline: 12px solid $secondary-color-dark; color: $tertiary-color; }
+    to { outline: 1px solid $secondary-color-dark; color: $primary-color-dark; }
     //100% { border: 8px solid $secondary-color; color: $tertiary-color; }
 }
 @keyframes button-float {

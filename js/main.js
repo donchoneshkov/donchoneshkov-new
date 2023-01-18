@@ -103,3 +103,20 @@ const handleOnMove = e => {
 
 header.onmousemove = e => handleOnMove(e);
 //header.ontouchmove = e => handleOnMove(e.touches[0]);
+
+function loadContent(content, location) {
+    location.innerHTML = content;
+}
+
+const contentSection = document.getElementById('content-text');
+const welcome = '<div>Greetings!</div> \
+                 <div>My name is <span>Doncho</span> and I\'m happy to meet you!</div> \
+                 <div>I look forward to working with you!</div>';
+const contact = '<div>Email: donchonesh@yahoo.com</div> \
+                 <div>Phone: +359 888 690381</div>';
+const skills = '';
+
+const cv = '<iframe src="cv/CV-English.pdf" class="cv-iframe"></iframe>';
+
+
+

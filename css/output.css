@@ -17,7 +17,7 @@
 
 body {
   background-color: rgb(16, 16, 16);
-  color: rgb(153, 153, 153);
+  color: rgb(194, 191, 191);
   animation-name: fadein;
   animation-duration: 2s;
   cursor: default;
@@ -61,11 +61,10 @@ header {
   margin-top: -16vmin;
   animation-name: slideout;
   font-weight: 700;
-  text-shadow: 1.3rem 0.7rem 0.6rem black;
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
   z-index: 3;
-  color: rgb(233, 133, 34);
+  color: rgb(242, 193, 44);
   flex: 0 0 content;
 }
 
@@ -107,12 +106,11 @@ a:visited {
 }
 
 .menu-button {
-  background-color: rgb(233, 133, 34);
+  background-color: rgb(220, 113, 5);
   color: rgb(15, 15, 15);
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  outline: 3px transparent;
   position: fixed;
   right: 90px;
   top: 90px;
@@ -138,8 +136,8 @@ a:visited {
   left: -5px;
   right: -5px;
   z-index: -1;
-  background: rgb(233, 133, 34);
-  filter: blur(20px);
+  background: rgb(220, 113, 5);
+  filter: blur(6px);
   border-radius: 50%;
 }
 
@@ -151,17 +149,8 @@ a:visited {
   animation-timing-function: ease-in-out;
 }
 
-.list-title {
-  -webkit-text-stroke: 1px navajowhite;
-  padding: 15px 10px;
-}
-
 .list-item {
   padding: 10px 5px;
-}
-
-.list-item, .list-item > a, .hidden-item > a {
-  -webkit-text-stroke: 1px navajowhite;
 }
 
 .list-item-expandable {
@@ -308,6 +297,25 @@ a:visited {
   background-position: center 45%;
 }
 
+.content-text {
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+
+.content-text span {
+  font-style: italic;
+  transition: color 0.3s;
+}
+
+.content-text span:hover {
+  color: rgb(220, 113, 5);
+}
+
+.cv-iframe {
+  width: 90%;
+  height: 100vh;
+}
+
 @keyframes slidein {
   from {
     margin-top: -32vh;
@@ -326,15 +334,15 @@ a:visited {
 }
 @keyframes button-hover {
   from {
-    outline: 1px solid rgb(233, 133, 34);
+    outline: 1px solid rgb(220, 113, 5);
     color: rgb(15, 15, 15);
   }
   50% {
-    outline: 12px solid rgb(233, 133, 34);
+    outline: 12px solid rgb(220, 113, 5);
     color: rgb(2, 159, 221);
   }
   to {
-    outline: 1px solid rgb(233, 133, 34);
+    outline: 1px solid rgb(220, 113, 5);
     color: rgb(15, 15, 15);
   }
 }
