@@ -116,7 +116,7 @@ const contact = '<div>Email: donchonesh@yahoo.com</div> \
                  <div>Phone: +359 888 690381</div>';
 const skills = '';
 
-const cv = '<iframe src="cv/CV-English.pdf" class="cv-iframe"></iframe>';
+const cv = '<iframe src="cv/CV-English.pdf#toolbar=0" class="cv-iframe"></iframe>';
 
 
 
