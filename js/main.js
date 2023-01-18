@@ -9,17 +9,58 @@ function hideItems(item) {
     item.getElementsByClassName('hidden-list')[0].style.display = 'none';
     console.log('mouse leave');
 }
+/*
+function showTouchedItems(event, item) {
+
+    if (item.classList.contains('focused-item') == true) {
+        item.classList.remove('focused-item');
+        item.getElementsByClassName('hidden-list')[0].style.display = 'none';
+    } else {
+    item.classList.add('focused-item');
+    item.getElementsByClassName('hidden-list')[0].style.display = 'flex';
+    console.log('touch item ', item);
+    }
+    
+}
+
+function hideUntouchedItems(event, item) {
+
+    Array.from(expandableItems).forEach(item => {
+        if (item.classList.contains('focused-item') == true) {
+            item.classList.remove('focused-item');
+            item.getElementsByClassName('hidden-list')[0].style.display = 'none';
+            console.log('untouch item ', item);
+
+        }
+    });
+
+}*/
 
 function addExpandableToItems(items) {
 
     Array.from(items).forEach(item => {
+        /*if (navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)) {
+            item.addEventListener("touchend", (event) => hideUntouchedItems(event, item));
+            item.addEventListener("touchend", (event) => showTouchedItems(event, item));
+      
+        } else {
+        }*/
         item.addEventListener("mouseleave", (event) => hideItems(item));
         item.addEventListener("mouseenter", (event) => showItems(item));
-        
     });
+        
 }
 
-addExpandableToItems(document.getElementsByClassName('list-item-expandable'));
+
+const expandableItems = document.getElementsByClassName('list-item-expandable');
+
+addExpandableToItems(expandableItems);
 
 function toggleMenu() {
     if (clicked == 0) clicked = 1;
@@ -61,4 +102,4 @@ const handleOnMove = e => {
 }
 
 header.onmousemove = e => handleOnMove(e);
-header.ontouchmove = e => handleOnMove(e.touches[0]);
+//header.ontouchmove = e => handleOnMove(e.touches[0]);

@@ -20,7 +20,7 @@ header { display: flex; flex-wrap: nowrap; position: relative; right: 0; backgro
                           background-position-y: center; border-right: 2px solid black; transition: width 0.3s ease-out; }
 #header-background-right { z-index: 1; width: 100%; height: 100%; background-image: url('images/6.jpg'); background-position-y: center; }
 .menu { width: 100vw; height: 16vmin; min-height: 215px; margin-top: -16vmin; animation-name: slideout; font-weight: 700; text-shadow: 1.3rem 0.7rem 0.6rem black;
-        animation-duration: 0.8s; animation-fill-mode: forwards;z-index: 3; color: $secondary-color;  flex: 0 0 content; }
+        animation-duration: 0.8s; animation-fill-mode: forwards; z-index: 3; color: $secondary-color;  flex: 0 0 content; }
 .menu-visible { display: flex; animation-name: slidein; animation-duration: 0.8s; animation-fill-mode: forwards; }
 //.menu-visible { animation-name: showitems; animation-duration: 1s; animation-fill-mode: forwards; }
 
