@@ -147,6 +147,7 @@ a:visited {
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  border-radius: 50%;
 }
 
 .list-item {
