@@ -64,7 +64,7 @@ header {
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
   z-index: 3;
-  color: rgb(242, 193, 44);
+  color: rgb(240, 255, 255);
   flex: 0 0 content;
 }
 
@@ -148,6 +148,10 @@ a:visited {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   border-radius: 50%;
+}
+
+.list-title {
+  min-width: 115px;
 }
 
 .list-item {
@@ -317,6 +321,39 @@ a:visited {
   height: 100vh;
 }
 
+.skills-preview {
+  display: grid;
+  justify-items: start;
+  align-items: start;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 0.8rem;
+  padding-bottom: 3rem;
+}
+
+.skill-square {
+  max-width: 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-square img {
+  max-height: 128px;
+  max-width: 128px;
+}
+
+.skill-title {
+  font-weight: 600;
+  font-size: 1.3rem;
+  transition: color 0.8s, font-style 0.1s;
+}
+
+.skill-title:hover {
+  color: rgb(220, 113, 5);
+  font-style: italic;
+}
+
 @keyframes slidein {
   from {
     margin-top: -32vh;
@@ -387,7 +424,7 @@ a:visited {
 }*/
 @media screen and (max-width: 650px) and (orientation: portrait) {
   .menu {
-    min-height: 280px;
+    min-height: 300px;
   }
   .focused-item {
     flex-direction: column;
@@ -397,10 +434,17 @@ a:visited {
     padding-left: 0;
     flex-direction: column;
     align-items: flex-start;
+    display: flex;
+  }
+  .hidden-item {
+    display: flex;
+  }
+  .skills-preview {
+    grid-template-columns: 1fr;
   }
   @keyframes slidein {
     from {
-      margin-top: -560px;
+      margin-top: -600px;
     }
     to {
       margin-top: 0;
@@ -411,11 +455,20 @@ a:visited {
       margin-top: 0;
     }
     to {
-      margin-top: -560px;
+      margin-top: -600px;
     }
   }
 }
 @media screen and (max-height: 650px) and (orientation: landscape) {
+  .hidden-list {
+    display: flex;
+  }
+  .hidden-item {
+    display: flex;
+  }
+  .skills-preview {
+    grid-template-columns: 1fr 1fr;
+  }
   @keyframes slidein {
     from {
       margin-top: -32vw;
