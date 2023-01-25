@@ -1,0 +1,22 @@
+.hiddenLetter{
+    padding: 5px;
+}
+.shownLetter {
+    padding: 5px;
+}
+.letterButton {
+    cursor: pointer;
+    font-weight: 700;
+}
+.letterButton:hover {
+    color: blue;
+}
+.clickedLetter {
+    cursor: not-allowed;
+    text-decoration: line-through;
+    color: red;
+}
+.containedLetter {
+    text-decoration: underline;
+    color: blue;
+}
