@@ -7,6 +7,8 @@
 .letterButton {
     cursor: pointer;
     font-weight: 700;
+    padding: 5px;
+    margin: 5px 10px;
 }
 .letterButton:hover {
     color: blue;
@@ -19,4 +21,9 @@
 .containedLetter {
     text-decoration: underline;
     color: blue;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

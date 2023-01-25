@@ -55,7 +55,7 @@ $wordArray = str_split($word);
     <link rel="stylesheet" href="hangmanOutput.css">
 </head>
 <body>
-    <section id="usedLetters">
+    <section id="usedLetters" class="flex">
         <span id="a" class="letterButton">A</span>
         <span id="b" class="letterButton">B</span>
         <span id="c" class="letterButton">C</span>
@@ -83,16 +83,17 @@ $wordArray = str_split($word);
         <span id="y" class="letterButton">Y</span>
         <span id="z" class="letterButton">Z</span>
     </section>
-    <section id="word"></section>
-    <section id="hangman" class="hangman">
+    <section id="word" class="flex"></section>
+    <section id="hangman" class="hangman flex">
         <svg width="200" height="300">
          <rect x="20" y="20" width="160" height="260" fill="white" stroke="black" />
         </svg>
     </section>
-    <section id="buttonsSection">
+    <section id="buttonsSection" class="flex">
         <button onclick="newGame()">New game</button>
         <button onclick="showWord()">Show word</button>
     </section>
+    <section id="hiddenWordSection" class="flex"></section>
     <script>
         var mistakes = 0;
         // Get the word from PHP and turn it into an array of all the letters
@@ -223,7 +224,7 @@ $wordArray = str_split($word);
         }
         // Show the word. Just for debugging and such.
         function showWord() {
-            let target = document.getElementById('buttonsSection');
+            let target = document.getElementById('hiddenWordSection');
             let node = document.createElement('div');
             node.innerHTML = word;
             target.appendChild(node);
