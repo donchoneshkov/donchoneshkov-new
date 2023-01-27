@@ -1,0 +1,20 @@
+.playingField {
+    background-color: green;
+    margin: auto;
+}
+
+.colorsBackground {
+    background-color: lightgray;
+    position: relative;
+}
+
+.flash { position: absolute; border-radius: 25%; padding: 10px;}
+.black { color: black; background-color: white; }
+.red { color: red; background-color: black; }
+.blue { color: blue; background-color: black; }
+.green { color: green; background-color: white; }
+.yellow { color: yellow; background-color: black; }
+.orange { color: orange; background-color: white; }
+.purple { color: purple; background-color: white; }
+.pink { color: pink; background-color: black; }
+.brown { color: brown; background-color: white;}
