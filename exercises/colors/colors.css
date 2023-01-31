@@ -6,12 +6,15 @@
 .colorsBackground {
   background-color: lightgray;
   position: relative;
+  overflow: hidden;
 }
 
 .flash {
   position: absolute;
-  border-radius: 25%;
-  padding: 10px;
+  border-radius: 15%;
+  padding: 5px 10px;
+  text-transform: capitalize;
+  font-weight: 700;
 }
 
 .black {
@@ -57,6 +60,36 @@
 .brown {
   color: brown;
   background-color: white;
+}
+
+.colorButtonsDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.colorButton {
+  padding: 5px 10px;
+  margin: 10px;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.startButton {
+  padding: 15px;
+  margin: 25px;
+  font-size: 2rem;
+}
+
+.buttonsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feedback {
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=colors.css.map */

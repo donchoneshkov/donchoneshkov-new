@@ -30,14 +30,12 @@
         <div id="colorsBackground" class="colorsBackground"></div>
     </section>
     <section id="buttonsSection" class="buttonsSection">
-        <div>
-            <button id="startButton" class="startButton" onclick="flash(hasTrapWords);">Start</button>
-        </div>
+        <button id="startButton" class="startButton" onclick="flash(hasTrapWords);">Start</button>
         <div id="colorButtonsDiv" class="colorButtonsDiv">
 
         </div>
     </section>
-    <section id="feedback" class="feedback">feedback</section>
+    <section id="feedback" class="feedback">Press the Start button to start the game!</section>
     <script src="main.js"></script>
 </body>
 </html>

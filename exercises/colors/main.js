@@ -17,7 +17,7 @@ var pallette =  [
                 ];
 var level = 1;
 var hasTrapWords = false;
-
+var trapChance = 0;
 var guess = 0;
 var isShowingFlashes = false;
 var colorButtonsTarget = document.getElementById('colorButtonsDiv');
@@ -30,7 +30,7 @@ loadNextLevel(level);
 // resize gaming square where the words flash, need to bind event on window resize
 function resizeGameArea() {
     playingField.style.width = window.innerWidth * 0.8 + 'px';
-    playingField.style.height = window.innerHeight/2 + 'px';
+    playingField.style.height = window.innerHeight/3 + 'px';
     colorsBackground.style.width = '100%';
     colorsBackground.style.height = '100%';
 }
@@ -38,15 +38,15 @@ function resizeGameArea() {
 function populateColors(level) {
     colors = [""];
     colorLimit = 0;
-    if (level + 2 <= 8) {
-        colorLimit = Math.ceil(level + 2 / 2);
+    if ((level + 2) / 2 <= 8) {
+        colorLimit = Math.ceil((level + 2) / 2);
     } else { 
         colorLimit = 8 
     }
     //console.log(colorLimit);
     flashesLimit = 0;
-    if (flashesLimit + level < 4) {
-        flashesLimit = 4;
+    if (flashesLimit + level < 3) {
+        flashesLimit = 3;
     } else {
         flashesLimit = flashesLimit + level;
     }
@@ -80,6 +80,7 @@ function populateColorButtons() {
         let button = document.createElement('button');
         button.innerHTML = pallette[i];
         //button.classList.add(pallette[i]);
+        button.classList.add('colorButton');
         button.setAttribute ("onClick", "guessFlash('"+pallette[i]+"')");
         colorButtonsTarget.appendChild(button);
     }
@@ -115,7 +116,7 @@ function flash(hasTrapWords) {
                 if (!hasTrapWords) {
                     flash.innerHTML = flashes[i];
                 } else {
-                    if (Math.random() < 0.1) {
+                    if (Math.random() < trapChance) {
                         flash.innerHTML = flashes[Math.floor(Math.random() * flashes.length)];
                     } else {
                         flash.innerHTML = flashes[i];
@@ -149,7 +150,7 @@ function guessFlash(flash) {
 
     } else {
         guess=0;
-        feedback.innerHTML = "Wrong! The next color in the sequence was not" + flash + '. Try again from the start.';
+        feedback.innerHTML = "Wrong! The next color in the sequence was not " + flash + '. Try again from the start.';
         console.log("wrong");
     }
 }
@@ -158,4 +159,7 @@ function loadNextLevel(level) {
     populateColors(level);
     populateFlashes();
     populateColorButtons();
+    if (trapChance < 0.35) {
+        trapChance = (0.05 * level) - 0.3;
+    }
 }

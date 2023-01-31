@@ -6,9 +6,10 @@
 .colorsBackground {
     background-color: lightgray;
     position: relative;
+    overflow: hidden;
 }
 
-.flash { position: absolute; border-radius: 25%; padding: 10px;}
+.flash { position: absolute; border-radius: 15%; padding: 5px 10px; text-transform: capitalize; font-weight: 700;}
 .black { color: black; background-color: white; }
 .red { color: red; background-color: black; }
 .blue { color: blue; background-color: black; }
@@ -18,3 +19,33 @@
 .purple { color: purple; background-color: white; }
 .pink { color: pink; background-color: black; }
 .brown { color: brown; background-color: white;}
+
+.colorButtonsDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.colorButton {
+    padding: 5px 10px;
+    margin: 10px;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+.startButton {
+    padding: 15px;
+    margin: 25px;
+    font-size: 2rem;
+}
+
+.buttonsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback {
+    display: flex;
+    justify-content: center;
+}
