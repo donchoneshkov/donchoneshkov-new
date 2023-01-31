@@ -75,24 +75,38 @@ header {
   animation-fill-mode: forwards;
 }
 
-footer {
+.footer {
   background-color: rgb(0, 0, 0);
-  display: block;
   width: 100vw;
-  height: 5vh;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
   position: fixed;
-  top: 95vh;
+  bottom: -5.5rem;
   transition: all 0.4s;
+  padding: 10px 0 0 10px;
 }
 
-footer:hover {
+.footer:hover {
   background-color: rgb(2, 159, 221);
-  display: block;
   width: 100vw;
-  height: 20vh;
+  height: 8rem;
+  bottom: 0vh;
   position: fixed;
-  top: 85vh;
   color: rgb(15, 15, 15);
+}
+
+.footer .footer-hidden-item {
+  transition: opacity 0.4s;
+  opacity: 0;
+}
+
+.footer:hover .footer-hidden-item {
+  opacity: 1;
 }
 
 a {
@@ -175,6 +189,12 @@ a:visited {
   padding: 0 1rem;
 }
 
+.main-content {
+  top: 0;
+  bottom: -5.5rem;
+  position: absolute;
+}
+
 .main-content[data-rain=rain] > .content-background-pattern {
   animation-name: raining;
   animation-duration: 3s;
@@ -225,12 +245,6 @@ a:visited {
   animation-timing-function: linear;
 }
 
-/*  dots background
-.main-content[data-active-index="0"] > .content-background-pattern { background-position: 0% -25%; }
-.main-content[data-active-index="1"] > .content-background-pattern { background-position: 0% -50%; }
-.main-content[data-active-index="2"] > .content-background-pattern { background-position: 0% -75%; }
-.main-content[data-active-index="3"] > .content-background-pattern { background-position: 0% -100%; }
-*/
 .main-content[data-active-index="0"] > .content-background-image {
   background-position: 100% 0%;
 }
@@ -417,27 +431,10 @@ a:visited {
     opacity: 0;
   }
 }
-/*@keyframes slideout {
-    from { height: 300px; margin-left: 0; }
-    50% { height: 85px; margin-left: 0; }
-    to { height: 85px; margin-left: calc(100% - 85px); } 
-}*/
 @media screen and (max-width: 650px) and (orientation: portrait) {
   .menu {
     min-height: 300px;
-  }
-  .focused-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .hidden-list {
-    padding-left: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    display: flex;
-  }
-  .hidden-item {
-    display: flex;
+    height: auto;
   }
   .skills-preview {
     grid-template-columns: 1fr;
@@ -460,12 +457,6 @@ a:visited {
   }
 }
 @media screen and (max-height: 650px) and (orientation: landscape) {
-  .hidden-list {
-    display: flex;
-  }
-  .hidden-item {
-    display: flex;
-  }
   .skills-preview {
     grid-template-columns: 1fr 1fr;
   }
@@ -484,6 +475,25 @@ a:visited {
     to {
       margin-top: -32vw;
     }
+  }
+}
+@media (pointer: coarse) {
+  .menu {
+    min-height: 300px;
+    height: auto;
+  }
+  .focused-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hidden-list {
+    padding-left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+  }
+  .hidden-item {
+    display: flex;
   }
 }
 

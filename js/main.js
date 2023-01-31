@@ -1,40 +1,12 @@
 function showItems(item) {
     item.classList.add('focused-item');
     item.getElementsByClassName('hidden-list')[0].style.display = 'flex';
-    console.log('mouse enter');
 }
 
 function hideItems(item) {
     item.classList.remove('focused-item');
     item.getElementsByClassName('hidden-list')[0].style.display = 'none';
-    console.log('mouse leave');
 }
-/*
-function showTouchedItems(event, item) {
-
-    if (item.classList.contains('focused-item') == true) {
-        item.classList.remove('focused-item');
-        item.getElementsByClassName('hidden-list')[0].style.display = 'none';
-    } else {
-    item.classList.add('focused-item');
-    item.getElementsByClassName('hidden-list')[0].style.display = 'flex';
-    console.log('touch item ', item);
-    }
-    
-}
-
-function hideUntouchedItems(event, item) {
-
-    Array.from(expandableItems).forEach(item => {
-        if (item.classList.contains('focused-item') == true) {
-            item.classList.remove('focused-item');
-            item.getElementsByClassName('hidden-list')[0].style.display = 'none';
-            console.log('untouch item ', item);
-
-        }
-    });
-
-}*/
 
 function addExpandableToItems(items) {
 
@@ -46,9 +18,7 @@ function addExpandableToItems(items) {
         || navigator.userAgent.match(/iPod/i)
         || navigator.userAgent.match(/BlackBerry/i)
         || navigator.userAgent.match(/Windows Phone/i)) {
-           // item.addEventListener("touchend", (event) => hideUntouchedItems(event, item));
-           // item.addEventListener("touchend", (event) => showTouchedItems(event, item));
-      
+
         } else {
             item.addEventListener("mouseleave", (event) => hideItems(item));
             item.addEventListener("mouseenter", (event) => showItems(item));
@@ -56,7 +26,6 @@ function addExpandableToItems(items) {
     });
         
 }
-
 
 const expandableItems = document.getElementsByClassName('list-item-expandable');
 
@@ -69,6 +38,7 @@ function toggleMenu() {
     else if (header.style.display == 'flex') { setTimeout( () => { header.style.display = 'none'; clicked = 0; }, 850); }
     menu.classList.toggle('menu-visible');    
 }
+
 const header = document.getElementById('header');
 const hiddenList = document.getElementsByClassName('hidden-list')[0];
 const menu = document.getElementById('menu');
@@ -86,7 +56,6 @@ Array.from(sections)
     }); 
 
 const footer = document.getElementById('footer');
-console.log(footer);
 footer.onmouseover = () => {
     mainContent.dataset.rain = "rain";
 }
@@ -102,7 +71,6 @@ const handleOnMove = e => {
 }
 
 header.onmousemove = e => handleOnMove(e);
-//header.ontouchmove = e => handleOnMove(e.touches[0]);
 
 function loadContent(content, location) {
     location.innerHTML = content;
