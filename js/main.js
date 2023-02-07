@@ -86,12 +86,12 @@ const skills = '<div class="skills-preview">\
                     <div class="skill-square">\
                         <img src="css/images/thumb/html.png" alt="HTML logo" class="skill-thumb">\
                         <div class="skill-title">HTML</div>\
-                        <div class="skill-description">I have experience creating and designing websites using HTML.I am familiar with the latest HTML5 and CSS3 standards, and I am able to create responsive and mobile-friendly websites.</div>\
+                        <div class="skill-description">I have experience creating and designing websites using HTML. I am familiar with the latest HTML5 and CSS3 standards, and I am able to create responsive and mobile-friendly websites.</div>\
                     </div>\
                     <div class="skill-square">\
                         <img src="css/images/thumb/css.png" alt="CSS logo" class="skill-thumb">\
                         <div class="skill-title">CSS</div>\
-                        <div class="skill-description">I have experience using CSS to style and layout web pages. I am familiar with CSS preprocessors such as Sass and am comfortable using CSS frameworks like Bootstrap.</div>\
+                        <div class="skill-description">I have experience using CSS to style and layout web pages. I am familiar with CSS preprocessors such as Sass and I\'m comfortable using CSS frameworks like Bootstrap.</div>\
                     </div>\
                     <div class="skill-square">\
                         <img src="css/images/thumb/js.png" alt="JS logo" class="skill-thumb">\

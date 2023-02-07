@@ -13,7 +13,7 @@ $enlarged-font-size: 2rem;
 * { margin: 0 0 0 0; padding: 0 0 0 0; font-size: $standard-font-size; box-sizing: border-box; }
 .container { display: flex; flex-direction: row; }
 .container-vertical { display: flex; flex-direction: column; }
-body { background-color: $background-primary-color-light; color: $primary-color; animation-name: fadein; animation-duration: 2s; cursor: default; }
+body { background-color: $background-primary-color-light; color: $primary-color; cursor: default; }
 
 header { display: flex; flex-wrap: nowrap; position: relative; right: 0; background-color: $background-primary-color-light; color: $primary-color-dark; }
 .header-background { position: absolute; }
