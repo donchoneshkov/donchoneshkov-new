@@ -39,6 +39,20 @@ function toggleMenu() {
     menu.classList.toggle('menu-visible');    
 }
 
+var previousScroll = 0;
+
+window.addEventListener('scroll', function() {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScroll > previousScroll && menu.classList.contains('menu-visible')) {
+    toggleMenu();
+  } else {
+  }
+
+  previousScroll = currentScroll;
+});
+
+
 const header = document.getElementById('header');
 const hiddenList = document.getElementsByClassName('hidden-list')[0];
 const menu = document.getElementById('menu');
