@@ -42,16 +42,29 @@ function toggleMenu() {
 var previousScroll = 0;
 
 window.addEventListener('scroll', function() {
-  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  let currentScroll = window.scrollY;
 
   if (currentScroll > previousScroll && menu.classList.contains('menu-visible')) {
     toggleMenu();
-  } else {
+//   } else if (window.scrollY === 0 && !menu.classList.contains('menu-visible'))  {
+//         //if (Event.deltaY < 0)
+//         toggleMenu();
   }
 
   previousScroll = currentScroll;
 });
 
+window.addEventListener('wheel', (e) => {
+    if (e.deltaY < 0 && window.scrollY ===0) {
+        if (!menu.classList.contains('menu-visible')) toggleMenu();
+    }
+});
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp' && window.scrollY ===0) {
+        if (!menu.classList.contains('menu-visible')) toggleMenu();
+    }
+});
 
 const header = document.getElementById('header');
 const hiddenList = document.getElementsByClassName('hidden-list')[0];
