@@ -116,14 +116,19 @@ const skills = '<div class="skills-preview">\
                         <div class="skill-description">I have experience creating and designing websites using HTML. I am familiar with the latest HTML5 and CSS3 standards, and I am able to create responsive and mobile-friendly websites.</div>\
                     </div>\
                     <div class="skill-square">\
-                        <img src="css/images/thumb/css.png" alt="CSS logo" class="skill-thumb">\
-                        <div class="skill-title">CSS</div>\
-                        <div class="skill-description">I have experience using CSS to style and layout web pages. I am familiar with CSS preprocessors such as Sass and I\'m comfortable using CSS frameworks like Bootstrap.</div>\
+                    <img src="css/images/thumb/css.png" alt="CSS logo" class="skill-thumb">\
+                    <div class="skill-title">CSS</div>\
+                    <div class="skill-description">I have experience using CSS to style and layout web pages. I am familiar with CSS preprocessors such as Sass and I\'m comfortable using CSS frameworks like Bootstrap.</div>\
                     </div>\
                     <div class="skill-square">\
-                        <img src="css/images/thumb/js.png" alt="JS logo" class="skill-thumb">\
-                        <div class="skill-title">JavaScript</div>\
-                        <div class="skill-description">I have experience using JavaScript to create dynamic and interactive web pages. I am familiar with event handling, DOM manipulation and animation.</div>\
+                    <img src="css/images/thumb/js.png" alt="JS logo" class="skill-thumb">\
+                    <div class="skill-title">JavaScript</div>\
+                    <div class="skill-description">I have experience using JavaScript to create dynamic and interactive web pages. I am familiar with event handling, DOM manipulation and animation.</div>\
+                    </div>\
+                    <div class="skill-square">\
+                        <img src="css/images/thumb/python.svg" alt="Python logo" class="skill-thumb">\
+                        <div class="skill-title">Python</div>\
+                        <div class="skill-description">I have experience with Python programming and I have a strong familiarity with its syntax, libraries, and best practices.</div>\
                     </div>\
                     <div class="skill-square">\
                         <img src="css/images/thumb/php.png" alt="PHP logo" class="skill-thumb">\
