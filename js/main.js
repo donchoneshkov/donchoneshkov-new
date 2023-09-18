@@ -34,8 +34,15 @@ addExpandableToItems(expandableItems);
 function toggleMenu() {
     if (clicked == 0) clicked = 1;
     else return;
-    if (header.style.display == 'none') { header.style.display = 'flex'; setTimeout( () => { clicked = 0; }, 850); }
-    else if (header.style.display == 'flex') { setTimeout( () => { header.style.display = 'none'; clicked = 0; }, 850); }
+    if (header.style.display == 'none') { 
+        header.style.display = 'flex';
+        menuButton.innerHTML = 'Close';
+        setTimeout( () => { clicked = 0; }, 850);
+    }
+    else if (header.style.display == 'flex') {
+        menuButton.innerHTML = 'My stuff!';
+        setTimeout( () => { header.style.display = 'none'; clicked = 0; }, 850);
+    }
     menu.classList.toggle('menu-visible');    
 }
 
@@ -56,15 +63,18 @@ window.addEventListener('scroll', function() {
 
 window.addEventListener('wheel', (e) => {
     if (e.deltaY < 0 && window.scrollY ===0) {
-        if (!menu.classList.contains('menu-visible')) toggleMenu();
+        if (!menu.classList.contains('menu-visible')) {
+            toggleMenu();
+        }
+        
     }
 });
 
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowUp' && window.scrollY ===0) {
-        if (!menu.classList.contains('menu-visible')) toggleMenu();
-    }
-});
+// window.addEventListener('keydown', (e) => {
+//     if (e.key === 'ArrowUp' && window.scrollY ===0) {
+//         if (!menu.classList.contains('menu-visible')) toggleMenu();
+//     }
+// });
 
 const header = document.getElementById('header');
 const hiddenList = document.getElementsByClassName('hidden-list')[0];
