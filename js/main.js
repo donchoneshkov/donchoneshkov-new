@@ -177,3 +177,12 @@ const skills = '<div class="skills-preview">\
                     </div>\
                     </div>\
                 ';
+    const stuff = ' <div class="stuff-title"><a href="exercises/rocket/rocket.html" target="_blank">Rocket</a></div>\
+                    <div class="stuff-title"><a href="exercises/snake/index.php" target="_blank">Snake</a></div>\
+                    <div class="stuff-title"><a href="exercises/hangman/hangman.php" target="_blank">Hangman</a></div>\
+                    <div class="stuff-title"><a href="exercises/colors/colors.php" target="_blank">Colors</a></div>\
+                    <div class="stuff-title"><a href="exercises/piano/piano.html" target="_blank">Piano</a></div>\
+                    <div class="stuff-title"><a href="https://github.com/donchoneshkov" target="_blank">Github</a></div>\
+                    <div class="stuff-title"><a href="https://www.linkedin.com/in/doncho-neshkov/" target="_blank">LinkedIn</a></div>\
+                    <div class="stuff-title"><a href="https://www.turbosquid.com/Search/Artists/Krutokh" target="_blank">Turbosquid</a></div>\
+                    <div class="stuff-title"><a href="cv/CV-English.pdf" target="_blank">CV</a></div>';
