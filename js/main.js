@@ -46,29 +46,29 @@ function toggleMenu() {
     menu.classList.toggle('menu-visible');    
 }
 
-var previousScroll = 0;
+// var previousScroll = 0;
 
-window.addEventListener('scroll', function() {
-  let currentScroll = window.scrollY;
+// window.addEventListener('scroll', function() {
+//   let currentScroll = window.scrollY;
 
-  if (currentScroll > previousScroll && menu.classList.contains('menu-visible')) {
-    toggleMenu();
-//   } else if (window.scrollY === 0 && !menu.classList.contains('menu-visible'))  {
-//         //if (Event.deltaY < 0)
-//         toggleMenu();
-  }
+//   if (currentScroll > previousScroll && menu.classList.contains('menu-visible')) {
+//     toggleMenu();
+// //   } else if (window.scrollY === 0 && !menu.classList.contains('menu-visible'))  {
+// //         //if (Event.deltaY < 0)
+// //         toggleMenu();
+//   }
 
-  previousScroll = currentScroll;
-});
+//   previousScroll = currentScroll;
+// });
 
-window.addEventListener('wheel', (e) => {
-    if (e.deltaY < 0 && window.scrollY ===0) {
-        if (!menu.classList.contains('menu-visible')) {
-            toggleMenu();
-        }
+// window.addEventListener('wheel', (e) => {
+//     if (e.deltaY < 0 && window.scrollY ===0) {
+//         if (!menu.classList.contains('menu-visible')) {
+//             toggleMenu();
+//         }
         
-    }
-});
+//     }
+// });
 
 // window.addEventListener('keydown', (e) => {
 //     if (e.key === 'ArrowUp' && window.scrollY ===0) {
