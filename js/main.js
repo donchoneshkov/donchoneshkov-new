@@ -195,4 +195,4 @@ const skills = '<div class="skills-preview">\
                     <div class="stuff-title"><a href="https://github.com/donchoneshkov" target="_blank">Github</a></div>\
                     <div class="stuff-title"><a href="https://www.linkedin.com/in/doncho-neshkov/" target="_blank">LinkedIn</a></div>\
                     <div class="stuff-title"><a href="https://www.turbosquid.com/Search/Artists/Krutokh" target="_blank">Turbosquid</a></div>\
-                    <div class="stuff-title"><a href="cv/CV-English.pdf" target="_blank">CV</a></div>';
+                    <div class="stuff-title"><a href="cv/cv.pdf" target="_blank">CV</a></div>';
